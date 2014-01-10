@@ -13,7 +13,18 @@ Topics that will be covered, include:
 - Random Access Memory (RAM)
 - Data Storage
 
-`Describe Architecture`
+Due to the nature of this project, this manual is subject to change over time to adapt to the progress of the students.
+
+In this project you will be building a simple computer with a central processing unit with support for a few instruction and some memory. The instructions that will be built are simple operations such moving data between registers and performing simple addition operations.
+
+By the end of the project, your computer should be able to demonstrate the operation of the following program:
+
+```AsciiDoc
+MOV A, B
+INC B
+MOV B, A
+INC B
+```
 
 # Project Componenents
 
@@ -34,7 +45,7 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 # Data Representation
 
-Inside the computer, we need a way of representing information, however, the only means we have is through wires. The information we can store on a wire is called a bit and is the absense or presence of a voltage relative to a common reference. The convention we have adopted is that the presence of a voltage represents a logical `1` and the absense of a volatage is a logical `0`
+Inside the computer, we need a way of representing information, however, the only means we have is through wires. The information we can store on a wire is called a bit and is the absence or presence of a voltage relative to a common reference. The convention we have adopted is that the presence of a voltage represents a logical `1` and the absence of a voltage represents a logical `0`
 
 ## Binary
 
@@ -62,6 +73,8 @@ Decimal | Binary
 
 # Description of Chips Used
 
+The part numbers on the chips may vary from chip to chip. For this project, the parts have been picked so that you may ignore the letters in the part number. This means the parts SN74HCT04 and 74LS04 would be referred to simply as 7404 and perform the same task.
+
 ## 555 Timer
 ## 7404 NOT Gate (x6)
 ## 7408 AND Gate (x4) 
@@ -77,7 +90,25 @@ Decimal | Binary
 ## Introductory Labs
 
 ### Equipment and Data Representation
+
+In this lab, we will introduce ourselves to the equipment in the lab. We will also look at what is required to represent data electrically and how to get output from it.
+
+You will have been issued a lab kit containing:
+
+- A project board
+- A power supply
+- A wire cutting and stripping tool
+- A chip removing tool
+
+The kits issued this year have the project board in
+
 ### Circuits using Logic ICs (Half Adder)
+
+In this lab, we will look at the circuits involved in forming logical equations. The circuit we will be using is called the half-adder which is used for adding two bits together to get a result.
+
+In using two bits, we need two inputs, one to represent each bit. Because we are using the binary number system, we can potentially end up with two digits in the result since our addition overflows or carries into another digit (in the case of 1+1). This means we will need two outputs to represent the result.
+
+We will be representing our inputs as A and B and our outputs as C and S. S will be the sum of the two digits and C will be the value that carries over.
 
 ```
   A
@@ -85,13 +116,30 @@ Decimal | Binary
 ---
  CS
 ```
+In order to construct our circuit, we will need to know the equation that represents each bit in the result. To do this, we can construct a truth table which can help us in determining the equations.
 
-| A | B | C | S |
-|:-:|:-:|:-:|:-:|
-| `0` | `0` | `0` | `0` |
-| `0` | `1` | `0` | `1` |
-| `1` | `0` | `0` | `1` |
-| `1` | `1` | `1` | `0` |
+| A | B |&nbsp;| C | S |&nbsp;|
+|:-:|:-:||:-:|:-:||
+| `0` | `0` || `0` | `0` || 0 + 0 = 0
+| `0` | `1` || `0` | `1` || 0 + 1 = 1
+| `1` | `0` || `0` | `1` || 1 + 0 = 1
+| `1` | `1` || `1` | `0` || 1 + 1 = 10
+
+The derived equations are constructed from the primitive boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
+
+- The NOT gate is part number 7404
+- The AND gate is part number 7408
+- The OR gate is part number 7432
+
+Reminder:
+- The part numbers on the chip may vary from chip to chip so ignore the letters.
+- SN74HCT04 would be referred to simply as 7404.
+
+#### To include in the lab report
+
+- The equations that you have derived for the half-adder.
+- A gate diagram for those equations.
+- A truth table for a full-adder circuit
 
 ## Project Labs
 
@@ -102,6 +150,7 @@ Decimal | Binary
 ### Memory
 ### Control Unit
 ### Running a Program
+
 
 
 # Test Area
