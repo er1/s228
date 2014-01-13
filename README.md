@@ -38,7 +38,7 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 In this project, we will be using a prototyping project board more commonly known as a breadboard.
 
-(!(A breadboard graphic)[breadboard.png])[breadboard.svg]
+[![A breadboard graphic](breadboard.png)](breadboard.svg)
 
 
 
@@ -84,7 +84,7 @@ The part numbers on the chips may vary from chip to chip. For this project, the 
 
 ## 555 Timer
 
-The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the (555 Timer IC Wikipedia page)[http://en.wikipedia.org/wiki/555_timer_IC].
+The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
 
 ```AsciiDoc
         .-._.-.
@@ -183,7 +183,7 @@ The 7432 is a chip which contains 4 OR gates.
 
 ### Equipment and Data Representation
 
-In this lab, we will introduce ourselves to the equipment in the lab. We will also look at what is required to represent data electrically and how to get output from it.
+In this lab, we will introduce ourselves to the equipment in the lab. We will also look at what is required to represent data electrically and how to get output from it. We will set up a simple circuit to produce data values with a switch, visualize the value with an LED and then use the value produced as an input to a logic gate and then visualize the output of a logic gate.
 
 You will have been issued a lab kit containing:
 
@@ -192,7 +192,19 @@ You will have been issued a lab kit containing:
 - A wire cutting and stripping tool
 - A chip removing tool
 
-The kits issued this year have the project board in
+The project kits issued this year have the project board integrated with the powersupply, an additional breadboard is also included in case you run out of space on your project board later on in the lab.
+
+#### Before You Begin
+
+This is a lab which deals with electricity, your lab demonstrator should have given you a quick talk about the safety of dealing with electricity. While the volage and current levels are not high enough to cause serious injury to anyone caution must still be taken with this equipment. The equipment may also become damaged if wired improperly. If at any point you are not sure about the setup of your project board, call over your lab instructor.
+
+__If something is not working or components become hot, turn off the power.__ Look for the issue or call over your lab instructor if needed.
+
+__IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY AND CALL OVER YOUR LAB INSTRUCTOR!__
+
+#### Steps
+
+1. Take out your project board from the kit that was issued to you, verify that it works
 
 ### Circuits using Logic ICs (Half Adder)
 
@@ -210,12 +222,12 @@ We will be representing our inputs as A and B and our outputs as C and S. S will
 ```
 In order to construct our circuit, we will need to know the equation that represents each bit in the result. To do this, we can construct a truth table which can help us in determining the equations.
 
-| A | B |&nbsp;| C | S |&nbsp;|
-|:-:|:-:||:-:|:-:||
-| `0` | `0` || `0` | `0` || 0 + 0 = 0
-| `0` | `1` || `0` | `1` || 0 + 1 = 1
-| `1` | `0` || `0` | `1` || 1 + 0 = 1
-| `1` | `1` || `1` | `0` || 1 + 1 = 10
+| A | B | C | S |
+|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 |
+| 0 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 |
+| 1 | 1 | 1 | 0 |
 
 The derived equations are constructed from the primitive boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
 
@@ -258,7 +270,7 @@ Reminder:
         '-----'
 ```
 
-## (555 Timer IC)[http://en.wikipedia.org/wiki/555_timer_IC]
+## [555 Timer IC](http://en.wikipedia.org/wiki/555_timer_IC)
 ```AsciiDoc
         .-._.-.
  GND   [|     |]   VCC
