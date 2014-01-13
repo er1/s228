@@ -188,39 +188,55 @@ The 7432 is a chip which contains 4 OR gates.
 
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
-- `A#`: Bit `n` of a binary number
-- `#`: Pin will be 0 if `A1`-`A4` match `#`
+- `A#`: Input bit `n` of a binary number
+- `#`: Output pin will be 0 if `A1`-`A4` match `#` otherwise it will be 1
 
 | A4 | A3 | A2 | A1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|  |  |  |  | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-|  |  |  |  | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
 
 ## 74164 Shift Register
 
 ```AsciiDoc
         .-._.-.
-  A3   [|     |]   VCC
-  B3   [| 74  |]   A1
-  Y3   [|  32 |]   B1
-  A4   [|     |]   Y1
-  B4   [|     |]   A2
-  Y4   [|     |]   B2
- GND   [|     |]   Y2
+ In1   [|     |]   VCC
+ In2   [| 74  |]   Q8
+  Q1   [| 164 |]   Q7
+  Q2   [|     |]   Q6
+  Q3   [|     |]   Q5
+  Q4   [|     |]   ~RES
+ GND   [|     |]   CLK
         '-----'
 ```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `In1`, `In2`: Input bit to shift in on on next rising edge (transition from 0 to 1) of `CLK`
+- `Q#`: Output pin containing the current stored value
+
+On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contain the previous value of `Q1`, `Q3` will contain the previous value of `Q2` and so on until `Q8`.
 
 ## 74283 4bit Adder
 
 ```AsciiDoc
         .-._.-.
-  A3   [|     |]   VCC
-  B3   [| 74  |]   A1
-  Y3   [|  32 |]   B1
-  A4   [|     |]   Y1
-  B4   [|     |]   A2
-  Y4   [|     |]   B2
- GND   [|     |]   Y2
+  S2   [|     |]   VCC
+  B2   [| 74  |]   B3
+  A2   [| 283 |]   A3
+  S1   [|     |]   S3
+  A1   [|     |]   A4
+  B1   [|     |]   B4
+ Cin   [|     |]   S4
+ GND   [|     |]   Cout
         '-----'
 ```
 
