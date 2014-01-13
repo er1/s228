@@ -38,7 +38,7 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 In this project, we will be using a prototyping project board more commonly known as a breadboard.
 
-[![A breadboard graphic](breadboard.png)](breadboard.svg)
+![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
 
 
 
@@ -172,10 +172,57 @@ The 7432 is a chip which contains 4 OR gates.
 - `Y#`: Output for correspondingly numbered gate
 
 ## 7442 Decoder
+
+```AsciiDoc
+        .-._.-.
+   0   [|     |]   VCC
+   1   [| 74  |]   A1
+   2   [|  42 |]   A2
+   3   [|     |]   A3
+   4   [|     |]   A4
+   5   [|     |]   9
+   6   [|     |]   8
+ GND   [|     |]   7
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `A#`: Bit `n` of a binary number
+- `#`: Pin will be 0 if `A1`-`A4` match `#`
+
+| A4 | A3 | A2 | A1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|  |  |  |  | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+|  |  |  |  | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
 ## 74164 Shift Register
-## 74189 64bit Memory (16x4)
+
+```AsciiDoc
+        .-._.-.
+  A3   [|     |]   VCC
+  B3   [| 74  |]   A1
+  Y3   [|  32 |]   B1
+  A4   [|     |]   Y1
+  B4   [|     |]   A2
+  Y4   [|     |]   B2
+ GND   [|     |]   Y2
+        '-----'
+```
+
 ## 74283 4bit Adder
-## 74395 4bit Register
+
+```AsciiDoc
+        .-._.-.
+  A3   [|     |]   VCC
+  B3   [| 74  |]   A1
+  Y3   [|  32 |]   B1
+  A4   [|     |]   Y1
+  B4   [|     |]   A2
+  Y4   [|     |]   B2
+ GND   [|     |]   Y2
+        '-----'
+```
 
 # Project 
 
@@ -245,9 +292,14 @@ Reminder:
 - A gate diagram for those equations.
 - A truth table for a full-adder circuit
 
+![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1-bb.svg)
+
 ## Project Labs
 
 ### System Clock / Clock Signal Generator
+
+![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab4-bb.svg)
+
 ### Buses and Registers
 #### Flip Flops
 #### Tri-State Buffer
