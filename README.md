@@ -30,11 +30,18 @@ INC B
 
 ## Power Supply
 
-In this project we will be using a standard 5 volt direct current power supply. We will be using the positive connection to connect to our supply rail called `VCC` and is by convention red. The negative connection will connect to our reference rail called ground or `GND` and is by convention black but may appear at times in blue.
+In this project, we will be using a standard 5 volt direct current power supply. We will be using the positive connection to connect to our supply rail called `VCC` and is by convention red. The negative connection will connect to our reference rail called ground or `GND` and is by convention black but may appear at times in blue.
 
 In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
+
+In this project, we will be using a prototyping project board more commonly known as a breadboard.
+
+(!(A breadboard graphic)[breadboard.png])[breadboard.svg]
+
+
+
 ## Wires
 ## Integrated Circuit Chips
 ## Passive Components
@@ -76,9 +83,94 @@ Decimal | Binary
 The part numbers on the chips may vary from chip to chip. For this project, the parts have been picked so that you may ignore the letters in the part number. This means the parts SN74HCT04 and 74LS04 would be referred to simply as 7404 and perform the same task.
 
 ## 555 Timer
+
+The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the (555 Timer IC Wikipedia page)[http://en.wikipedia.org/wiki/555_timer_IC].
+
+```AsciiDoc
+        .-._.-.
+ GND   [|     |]   VCC
+TRIG   [| 555 |]   DIS
+ OUT   [|     |]   THR
+~RES   [|     |]   CTRL
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `OUT`: Output waveform
+- `TRIG`, `RES`, `CTRL`, `THR`, `DIS`: This pins determine how the chip should generate its output waveform.
+
 ## 7404 NOT Gate (x6)
+
+The 7404 is a chip which contains 6 NOT gates also know as inverters.
+
+`Yn` = ~`An`
+
+```AsciiDoc
+        .-._.-.
+  A4   [|     |]   VCC
+  Y4   [| 74  |]   A1
+  A5   [|  04 |]   Y1
+  Y5   [|     |]   A2
+  A6   [|     |]   Y2
+  Y6   [|     |]   A3
+ GND   [|     |]   Y3
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `A#`: Input for correspondingly numbered gate
+- `Y#`: Output for correspondingly numbered gate
+
 ## 7408 AND Gate (x4) 
+
+The 7408 is a chip which contains 4 AND gates.
+
+`Yn` = `An` &and; `Bn`
+
+```AsciiDoc
+        .-._.-.
+  A3   [|     |]   VCC
+  B3   [| 74  |]   A1
+  Y3   [|  08 |]   B1
+  A4   [|     |]   Y1
+  B4   [|     |]   A2
+  Y4   [|     |]   B2
+ GND   [|     |]   Y2
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `A#`: First Input for correspondingly numbered gate
+- `B#`: Second Input for correspondingly numbered gate
+- `Y#`: Output for correspondingly numbered gate
+
 ## 7432 OR Gate (x4)
+
+The 7432 is a chip which contains 4 OR gates.
+
+`Yn` = `An` &or; `Bn`
+
+```AsciiDoc
+        .-._.-.
+  A3   [|     |]   VCC
+  B3   [| 74  |]   A1
+  Y3   [|  32 |]   B1
+  A4   [|     |]   Y1
+  B4   [|     |]   A2
+  Y4   [|     |]   B2
+ GND   [|     |]   Y2
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `A#`: First Input for correspondingly numbered gate
+- `B#`: Second Input for correspondingly numbered gate
+- `Y#`: Output for correspondingly numbered gate
+
 ## 7442 Decoder
 ## 74164 Shift Register
 ## 74189 64bit Memory (16x4)
@@ -143,15 +235,13 @@ Reminder:
 
 ## Project Labs
 
-### System Clock
+### System Clock / Clock Signal Generator
 ### Buses and Registers
 #### Flip Flops
 #### Tri-State Buffer
 ### Memory
 ### Control Unit
 ### Running a Program
-
-
 
 # Test Area
 
@@ -168,6 +258,7 @@ Reminder:
         '-----'
 ```
 
+## (555 Timer IC)[http://en.wikipedia.org/wiki/555_timer_IC]
 ```AsciiDoc
         .-._.-.
  GND   [|     |]   VCC
