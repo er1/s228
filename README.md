@@ -36,10 +36,11 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
 
-In this project, we will be using a prototyping project board more commonly known as a breadboard.
+In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electrionic connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
+
+The prototyping area located in the middle is where you will place the componenets in this project. There is a gap in the middle which will be where you put your DIP (Dual Inline Package) components so that you can make connection to their pins.
 
 ![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
-
 
 
 ## Wires
