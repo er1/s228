@@ -226,7 +226,30 @@ The 7432 is a chip which contains 4 OR gates.
 
 On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contain the previous value of `Q1`, `Q3` will contain the previous value of `Q2` and so on until `Q8`.
 
-## 74283 4bit Adder
+## 74173 4 bit Register
+
+```AsciiDoc
+        .-._.-.
+ OE1   [|     |]   VCC
+ OE2   [| 74  |]   CLR
+  Q1   [| 173 |]   D1
+  Q2   [|     |]   D2
+  Q3   [|     |]   D3
+  Q4   [|     |]   D4
+ CLK   [|     |]   In1
+ GND   [|     |]   In2
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `D#`: Inputs to Latch on `CLK` rising edge
+- `Q#`: Outputs of register on
+- `In1`, `In2`:
+- `OE1`, `OE2`:
+- `CLK`:
+
+## 74283 4 bit Adder
 
 ```AsciiDoc
         .-._.-.
@@ -268,7 +291,13 @@ __IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY 
 
 #### Steps
 
-1. Take out your project board from the kit that was issued to you, verify that it works
+1. Take out your project board from the kit that was issued to you, verify that it works.
+2. Hook up all supply rails to +5V and Ground on the power supply.
+3. Hook up a switch pack and LED pack.
+4. Use the switch to control the LED.
+5. Hook up a logic gate and use switches for its input and an LED for its output.
+
+![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1-bb.svg)
 
 ### Circuits using Logic ICs (Half Adder)
 
@@ -308,8 +337,6 @@ Reminder:
 - The equations that you have derived for the half-adder.
 - A gate diagram for those equations.
 - A truth table for a full-adder circuit
-
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1-bb.svg)
 
 ## Project Labs
 
