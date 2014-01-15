@@ -26,7 +26,7 @@ MOV B, A
 INC B
 ```
 
-# Project Componenents
+# Project Components
 
 ## Power Supply
 
@@ -36,15 +36,24 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
 
-In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electrionic connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
+In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electronic connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
 
-The prototyping area located in the middle is where you will place the componenets in this project. There is a gap in the middle which will be where you put your DIP (Dual Inline Package) components so that you can make connection to their pins.
+The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins.
+
+The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively.
 
 ![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
 
-
 ## Wires
+
+We will be using 22 gauge solid core copper wire for this project.
+
+The wires should be properly cut and the plastic insulation must be stripped from the inner conductor before use. The amount of insulation stripped should nominally expose 6mm (1/4 inches) of wire.
+
 ## Integrated Circuit Chips
+
+We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated circuit chips for this project.
+
 ## Passive Components
 ### Resistor
 ### Capacitor
@@ -77,7 +86,6 @@ Decimal | Binary
 15 | `1111`
 
 # Logic Gates
-
 
 # Description of Chips Used
 
@@ -279,11 +287,11 @@ You will have been issued a lab kit containing:
 - A wire cutting and stripping tool
 - A chip removing tool
 
-The project kits issued this year have the project board integrated with the powersupply, an additional breadboard is also included in case you run out of space on your project board later on in the lab.
+The project kits issued this year have the project board integrated with the power supply, an additional breadboard is also included in case you run out of space on your project board later on in the lab.
 
 #### Before You Begin
 
-This is a lab which deals with electricity, your lab demonstrator should have given you a quick talk about the safety of dealing with electricity. While the volage and current levels are not high enough to cause serious injury to anyone caution must still be taken with this equipment. The equipment may also become damaged if wired improperly. If at any point you are not sure about the setup of your project board, call over your lab instructor.
+This is a lab which deals with electricity, your lab demonstrator should have given you a quick talk about the safety of dealing with electricity. While the voltage and current levels are not high enough to cause serious injury to anyone caution must still be taken with this equipment. The equipment may also become damaged if wired improperly. If at any point you are not sure about the setup of your project board, call over your lab instructor.
 
 __If something is not working or components become hot, turn off the power.__ Look for the issue or call over your lab instructor if needed.
 
@@ -322,7 +330,7 @@ In order to construct our circuit, we will need to know the equation that repres
 | 1 | 0 | 0 | 1 |
 | 1 | 1 | 1 | 0 |
 
-The derived equations are constructed from the primitive boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
+The derived equations are constructed from the primitive Boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
 
 - The NOT gate is part number 7404
 - The AND gate is part number 7408
