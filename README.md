@@ -297,7 +297,7 @@ __IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY 
 4. Use the switch to control the LED.
 5. Hook up a logic gate and use switches for its input and an LED for its output.
 
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1-bb.svg)
+![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1_bb.svg)
 
 ### Circuits using Logic ICs (Half Adder)
 
