@@ -338,11 +338,15 @@ Reminder:
 - A gate diagram for those equations.
 - A truth table for a full-adder circuit
 
+### Flip-Flops
+
+![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
+
 ## Project Labs
 
 ### System Clock / Clock Signal Generator
 
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab4-bb.svg)
+![Example circuit for Lab 4](https://rawgithub.com/er1/s228/master/lab4_bb.svg)
 
 ### Buses and Registers
 #### Flip Flops
