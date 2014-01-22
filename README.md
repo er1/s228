@@ -75,6 +75,101 @@ Decimal | Binary | Decimal | Binary | Decimal | Binary | Decimal | Binary
 
 # Logic Gates
 
+All logic on an IC is built from logic gates. Logic gates are a combination of transistors to form logical boolean operations. The simplest gates to produce are the NOT gate, NAND gate and NOR gate. Using these gates, more familiar gates such as AND and OR can be built.
+
+<!-- elaborate more on gates -->
+
+# Project 
+
+## Introductory Labs
+
+### Equipment and Data Representation
+
+In this lab, we will introduce ourselves to the equipment in the lab. We will also look at what is required to represent data electrically and how to get output from it. We will set up a simple circuit to produce data values with a switch, visualize the value with an LED and then use the value produced as an input to a logic gate and then visualize the output of a logic gate.
+
+You will have been issued a lab kit containing:
+
+- A project board
+- A power supply
+- A wire cutting and stripping tool
+- A chip removing tool
+
+The project kits issued this year have the project board integrated with the power supply, an additional breadboard is also included in case you run out of space on your project board later on in the lab.
+
+#### Before You Begin
+
+This is a lab which deals with electricity, your lab demonstrator should have given you a quick talk about the safety of dealing with electricity. While the voltage and current levels are not high enough to cause serious injury to anyone caution must still be taken with this equipment. The equipment may also become damaged if wired improperly. If at any point you are not sure about the setup of your project board, call over your lab instructor.
+
+__If something is not working or components become hot, turn off the power.__ Look for the issue or call over your lab instructor if needed.
+
+__IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY AND CALL OVER YOUR LAB INSTRUCTOR!__
+
+#### Steps
+
+1. Take out your project board from the kit that was issued to you, verify that it works.
+2. Hook up all supply rails to +5V and Ground on the power supply.
+3. Hook up a switch pack and LED pack.
+4. Use the switch to control the LED.
+5. Hook up a logic gate and use switches for its input and an LED for its output.
+
+![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1_bb.svg)
+
+### Circuits using Logic ICs (Half Adder)
+
+In this lab, we will look at the circuits involved in forming logical equations. The circuit we will be using is called the half-adder which is used for adding two bits together to get a result.
+
+In using two bits, we need two inputs, one to represent each bit. Because we are using the binary number system, we can potentially end up with two digits in the result since our addition overflows or carries into another digit (in the case of 1+1). This means we will need two outputs to represent the result.
+
+We will be representing our inputs as A and B and our outputs as C and S. S will be the sum of the two digits and C will be the value that carries over.
+
+```
+  A
++ B
+---
+ CS
+```
+In order to construct our circuit, we will need to know the equation that represents each bit in the result. To do this, we can construct a truth table which can help us in determining the equations.
+
+| A | B | &bull; | C | S |
+|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | = | 0 | 0 |
+| 0 | 1 | = | 0 | 1 |
+| 1 | 0 | = | 0 | 1 |
+| 1 | 1 | = | 1 | 0 |
+
+The derived equations are constructed from the primitive Boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
+
+- The NOT gate is part number 7404
+- The AND gate is part number 7408
+- The OR gate is part number 7432
+
+Reminder:
+- The part numbers on the chip may vary from chip to chip so ignore the letters.
+- SN74HCT04 would be referred to simply as 7404.
+
+#### To include in the lab report
+
+- The equations that you have derived for the half-adder.
+- A gate diagram for those equations.
+- A truth table for a full-adder circuit
+
+### Flip-Flops
+
+![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
+
+## Project Labs
+
+### System Clock / Clock Signal Generator
+
+![Example circuit for Lab 4](https://rawgithub.com/er1/s228/master/lab4_bb.svg)
+
+### Buses and Registers
+#### Flip Flops
+#### Tri-State Buffer
+### Memory
+### Control Unit
+### Running a Program
+
 # Description of Chips Used
 
 The part numbers on the chips may vary from chip to chip. For this project, the parts have been picked so that you may ignore the letters in the part number. This means the parts SN74HCT04 and 74LS04 would be referred to simply as 7404 and perform the same task.
@@ -188,18 +283,18 @@ The 7432 is a chip which contains 4 OR gates.
 - `A#`: Input bit `n` of a binary number
 - `#`: Output pin will be 0 if `A1`-`A4` match `#` otherwise it will be 1
 
-| A4 | A3 | A2 | A1 | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 0 | 0 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 0 | 0 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
-| 0 | 1 | 0 | 0 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 |
-| 0 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
-| 0 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
-| 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
-| 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
-| 1 | 0 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
+| A4 | A3 | A2 | A1 | &bull; | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 0 | 0 | 0 | 0 | = | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 0 | 1 | = | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 1 | 0 | = | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 0 | 1 | 1 | = | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 0 | = | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 0 | 1 | = | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | = | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 1 | = | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 | 1 |
+| 1 | 0 | 0 | 0 | = | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 | 1 |
+| 1 | 0 | 0 | 1 | = | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 0 |
 
 ## 74164 Shift Register
 
@@ -237,13 +332,15 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
         '-----'
 ```
 
+<!-- check with datasheet -->
+
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
 - `D#`: Inputs to Latch on `CLK` rising edge
-- `Q#`: Outputs of register on
-- `In1`, `In2`:
-- `OE1`, `OE2`:
-- `CLK`:
+- `Q#`: Outputs of register on `OE1` and `OE2`
+- `In1`, `In2`: Enable this to store values from `D#` on the next rising edge of `CLK`
+- `OE1`, `OE2`: Enable this to output values from `Q#`
+- `CLK`: Clock signal
 
 ## 74283 4 bit Adder
 
@@ -259,97 +356,6 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
  GND   [|     |]   Cout
         '-----'
 ```
-
-# Project 
-
-## Introductory Labs
-
-### Equipment and Data Representation
-
-In this lab, we will introduce ourselves to the equipment in the lab. We will also look at what is required to represent data electrically and how to get output from it. We will set up a simple circuit to produce data values with a switch, visualize the value with an LED and then use the value produced as an input to a logic gate and then visualize the output of a logic gate.
-
-You will have been issued a lab kit containing:
-
-- A project board
-- A power supply
-- A wire cutting and stripping tool
-- A chip removing tool
-
-The project kits issued this year have the project board integrated with the power supply, an additional breadboard is also included in case you run out of space on your project board later on in the lab.
-
-#### Before You Begin
-
-This is a lab which deals with electricity, your lab demonstrator should have given you a quick talk about the safety of dealing with electricity. While the voltage and current levels are not high enough to cause serious injury to anyone caution must still be taken with this equipment. The equipment may also become damaged if wired improperly. If at any point you are not sure about the setup of your project board, call over your lab instructor.
-
-__If something is not working or components become hot, turn off the power.__ Look for the issue or call over your lab instructor if needed.
-
-__IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY AND CALL OVER YOUR LAB INSTRUCTOR!__
-
-#### Steps
-
-1. Take out your project board from the kit that was issued to you, verify that it works.
-2. Hook up all supply rails to +5V and Ground on the power supply.
-3. Hook up a switch pack and LED pack.
-4. Use the switch to control the LED.
-5. Hook up a logic gate and use switches for its input and an LED for its output.
-
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1_bb.svg)
-
-### Circuits using Logic ICs (Half Adder)
-
-In this lab, we will look at the circuits involved in forming logical equations. The circuit we will be using is called the half-adder which is used for adding two bits together to get a result.
-
-In using two bits, we need two inputs, one to represent each bit. Because we are using the binary number system, we can potentially end up with two digits in the result since our addition overflows or carries into another digit (in the case of 1+1). This means we will need two outputs to represent the result.
-
-We will be representing our inputs as A and B and our outputs as C and S. S will be the sum of the two digits and C will be the value that carries over.
-
-```
-  A
-+ B
----
- CS
-```
-In order to construct our circuit, we will need to know the equation that represents each bit in the result. To do this, we can construct a truth table which can help us in determining the equations.
-
-| A | B | C | S |
-|:-:|:-:|:-:|:-:|
-| 0 | 0 | 0 | 0 |
-| 0 | 1 | 0 | 1 |
-| 1 | 0 | 0 | 1 |
-| 1 | 1 | 1 | 0 |
-
-The derived equations are constructed from the primitive Boolean algebra operations AND OR and NOT. These operations have corresponding logical gates which are available as DIP chips in the lab.
-
-- The NOT gate is part number 7404
-- The AND gate is part number 7408
-- The OR gate is part number 7432
-
-Reminder:
-- The part numbers on the chip may vary from chip to chip so ignore the letters.
-- SN74HCT04 would be referred to simply as 7404.
-
-#### To include in the lab report
-
-- The equations that you have derived for the half-adder.
-- A gate diagram for those equations.
-- A truth table for a full-adder circuit
-
-### Flip-Flops
-
-![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
-
-## Project Labs
-
-### System Clock / Clock Signal Generator
-
-![Example circuit for Lab 4](https://rawgithub.com/er1/s228/master/lab4_bb.svg)
-
-### Buses and Registers
-#### Flip Flops
-#### Tri-State Buffer
-### Memory
-### Control Unit
-### Running a Program
 
 # Test Area
 
