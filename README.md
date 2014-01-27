@@ -143,6 +143,13 @@ The derived equations are constructed from the primitive Boolean algebra operati
 - The AND gate is part number 7408
 - The OR gate is part number 7432
 
+You will need to construct the truth table above as a configuration of logic gates such that the inputs A and B are provided by switches and the outputs C and S are visible on LEDs.
+
+- To do this, you will need to construct the Boolean algebra equation for C and S using only the variables A and B.
+- Using these equations you will modify them to use only the AND, OR and NOT operators.
+- This equation will give allow you to draw the gate diagram with the gates availible to you.
+- Use this gate diagram and the IC pinouts provided at the end of the manual to construct the circuit.
+
 Reminder:
 - The part numbers on the chip may vary from chip to chip so ignore the letters.
 - SN74HCT04 would be referred to simply as 7404.
@@ -151,11 +158,46 @@ Reminder:
 
 - The equations that you have derived for the half-adder.
 - A gate diagram for those equations.
-- A truth table for a full-adder circuit
+- A truth table for a __full-adder__ circuit
 
-### Flip-Flops
+### Latches, Flip-Flops and Registers
+
+In the last lab, we looked at how we can construct a circuit for any given truth table. In this lab, we will look at how we can use this and some new parts to build other components of a computer. 
+
+## Latches
+
+A computer does not always require that the input for its operations be present at all times. It uses memory to hold inputs for when it needs them and can store results to memory for later. Latches provide the facility to do this and are build by a cross-coupled pair of NAND gates or NOR gates. Cross-coupling is when the output of one gate is used as the input for the other and vice-versa. This creates a feedback in the circuit which is used to store a one bit value. The other inputs allow the feedback to be changed thus changing the stored bit value. This is what is known as an R-S latch. It has two inputs (R and S) and two outputs (Q and ~Q).
+
+| R | S | Latch Behavior | 
+|:-:|:-:| -------------- |
+| 0 | 0 | Retains value  |
+| 1 | 0 | Stores a 0     |
+| 0 | 1 | Stores a 1     |
+| 1 | 1 | Undefined      |
+
+The R-S latch does not provide the ideal means for sampling a value to store. For this, we add some logic in front of the RS latch to create a D latch. With the D latch we have inputs D and E which feed R and S so that when E is 0, we retain a value and when E is 1, we store the value on D.
+
+| D | E | &bull; | R | S |
+|:-:|:-:|:-:|:-:|:-:|
+| X | 0 | = | 0 | 0 |
+| 0 | 1 | = | 1 | 0 |
+| 1 | 1 | = | 0 | 1 |
+
+X in this case is used to denote the "Don't Care" input where the value can be either 0 or 1 for this particular output as when E is 0 we are retaining a value and D is not used under this case.
+
+![Gate Diagram of D Type Latch](http://upload.wikimedia.org/wikipedia/commons/2/2f/D-Type_Transparent_Latch.svg)
+
+In this part of the lab, you will construct a D type latch and test its ability to store a value.
 
 ![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
+
+## Flip-Flops
+
+Latches are level triggered which in the case of D latches, means that when the level of E is high (E = 1) it stores the value from D which may change change while E is high. This is not an ideal behaviour because we would like to sample a particular value at a particular time. This behavior is called edge-triggered and is the moment when a value changes in a particular direction. The positive edge or rising edge is when a value goes from 0 to 1 and the negative edge or falling edge is when a value goes from 1 to 0. 
+
+A flip-flop is two chained D type latches such that the D input for the second comes from the Q output of the first. E is inverted for the second one.
+
+[Wikipedia Page on Flip-Flops](http://en.wikipedia.org/wiki/Flip-flop_%28electronics%29)
 
 ## Project Labs
 
