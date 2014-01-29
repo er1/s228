@@ -56,9 +56,20 @@ We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated ci
 
 ## Passive Components
 ### Resistor
+
+We will be using 330 &Ohm; resistors as a means to limit current through LEDs and to serve as pull-ups on switches. The clock circuit will make use of two 22 K&Ohm; resistors as part of a resistor-capacitor (RC) tank circuit.
+
 ### Capacitor
+
+We will be using a capacitor in the clock circuit as part of the RC tank circuit.
+
 ## Light Emitting Diodes
+
+We will be using a strip of Light Emiting Diodes (LEDs) as a means of visualizing binary data values. These must always be using in series with a resistor so that they will not burn out.
+
 ## Switches
+
+We will be using a strip of switches to toggle between data values.
 
 # Data Representation
 
@@ -154,12 +165,6 @@ Reminder:
 - The part numbers on the chip may vary from chip to chip so ignore the letters.
 - SN74HCT04 would be referred to simply as 7404.
 
-#### To include in the lab report
-
-- The equations that you have derived for the half-adder.
-- A gate diagram for those equations.
-- A truth table for a __full-adder__ circuit
-
 ### Latches, Flip-Flops and Registers
 
 In the last lab, we looked at how we can construct a circuit for any given truth table. In this lab, we will look at how we can use this and some new parts to build other components of a computer. 
@@ -198,6 +203,19 @@ Latches are level triggered which in the case of D latches, means that when the 
 A flip-flop is two chained D type latches such that the D input for the second comes from the Q output of the first. E is inverted for the second one.
 
 [Wikipedia Page on Flip-Flops](http://en.wikipedia.org/wiki/Flip-flop_%28electronics%29)
+
+#### To include in Lab Report 1
+
+- An explination of how data is represented electrically
+- How logic gates relate to Boolean Algebra
+- The equations that you have derived for the half-adder
+- A gate diagram for those equations
+- A truth table for a __full-adder__ circuit
+- A gate diagram for and an explination of a D latch
+
+Lab reports are due two weeks after they are assigned. __Lab report 1 is due the week of February 10.__
+
+There will be a 10% __deduction__ on the lab grade if fail include your name or group number on your report. There will be a 40% __deduction__ in lab grade if fail to complete the labs before the lab report deadline.
 
 ## Project Labs
 
