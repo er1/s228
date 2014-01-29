@@ -206,7 +206,7 @@ A flip-flop is two chained D type latches such that the D input for the second c
 
 #### To include in Lab Report 1
 
-- An explination of how data is represented electrically
+- An explanation of how data is represented electrically
 - How logic gates relate to Boolean Algebra
 - The equations that you have derived for the half-adder
 - A gate diagram for those equations
@@ -215,7 +215,7 @@ A flip-flop is two chained D type latches such that the D input for the second c
 
 Lab reports are due two weeks after they are assigned. __Lab report 1 is due the week of February 10.__
 
-There will be a 10% __deduction__ on the lab grade if fail include your name or group number on your report. There will be a 40% __deduction__ in lab grade if fail to complete the labs before the lab report deadline.
+There will be a 10% __deduction__ on the lab grade if you fail to include your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
 ## Project Labs
 
