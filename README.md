@@ -194,7 +194,7 @@ X in this case is used to denote the "Don't Care" input where the value can be e
 
 In this part of the lab, you will construct a D type latch and test its ability to store a value.
 
-![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
+![Example circuit for Lab 3](https://raw2.github.com/Netopya/s228/master/lab3.png)
 
 ## Flip-Flops
 
