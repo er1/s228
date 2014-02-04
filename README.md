@@ -123,7 +123,7 @@ __IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY 
 4. Use the switch to control the LED.
 5. Hook up a logic gate and use switches for its input and an LED for its output.
 
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1_bb.svg)
+![Example circuit for Lab 1](https://raw2.github.com/Netopya/s228/master/lab1.png)
 
 ### Circuits using Logic ICs (Half Adder)
 
@@ -190,7 +190,7 @@ The R-S latch does not provide the ideal means for sampling a value to store. Fo
 
 X in this case is used to denote the "Don't Care" input where the value can be either 0 or 1 for this particular output as when E is 0 we are retaining a value and D is not used under this case.
 
-![Gate Diagram of D Type Latch](http://upload.wikimedia.org/wikipedia/commons/2/2f/D-Type_Transparent_Latch.svg)
+![Gate Diagram of D Type Latch](http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/D-Type_Transparent_Latch.svg/1000px-D-Type_Transparent_Latch.svg.png)
 
 In this part of the lab, you will construct a D type latch and test its ability to store a value.
 
@@ -235,7 +235,7 @@ We will introduce two new logic chips for this purpose.
 
 We will be using the clock signal to general a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
 
-![Example circuit for Lab 4](https://rawgithub.com/er1/s228/master/lab4_bb.svg)
+![Example circuit for Lab 4](https://raw2.github.com/Netopya/s228/master/lab4.png)
 
 ### Buses and Registers
 #### Flip Flops
