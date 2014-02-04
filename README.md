@@ -42,9 +42,7 @@ The prototyping area located in the middle is where you will place the component
 
 The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively.
 
-<img src="https://raw2.github.com/Netopya/s228/master/breadboard.svg"/>
-
-![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
+![A breadboard graphic](https://raw2.github.com/Netopya/s228/master/breadboard.png)
 
 ## Wires
 
