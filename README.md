@@ -158,7 +158,7 @@ You will need to construct the truth table above as a configuration of logic gat
 
 - To do this, you will need to construct the Boolean algebra equation for C and S using only the variables A and B.
 - Using these equations you will modify them to use only the AND, OR and NOT operators.
-- This equation will give allow you to draw the gate diagram with the gates availible to you.
+- This equation will allow you to draw the gate diagram with the gates availible to you.
 - Use this gate diagram and the IC pinouts provided at the end of the manual to construct the circuit.
 
 Reminder:
