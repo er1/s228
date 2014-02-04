@@ -4450,7 +4450,7 @@
     <path fill="#262626"  id="slot" d="M0.4032,9.7776l0,4.1976c1.0584,-0.1224,1.8864,-1.008,1.8864,-2.1024C2.2896,10.7784,1.4688,9.9,0.4032,9.7776z"/>
     <path fill="#303030"  id="cover" d="M0.54,3.9312L0.54,8.244c1.7136,0.324,3.0168,1.8216,3.0168,3.6288c0,1.8072,-1.296,3.312,-3.0168,3.636L0.54,15.516l3.6,0L4.14,3.9312L0.54,3.9312z"/>
     <circle fill="#212121" cx="4.68"  cy="16.8984" r="1.4832"/>
-    <text x="4.68" y="11.88" fill="#e6e6e6" font-family="OCRA"  text-anchor="start" stroke="none" id="label" font-size="5.76">7432</text>
+    <text x="4.68" y="11.88" fill="#e6e6e6" font-family="OCRA"  text-anchor="start" stroke="none" id="label" font-size="5.76">7408</text>
     <rect width="2.16" x="2.52" y="20.6352" fill="#8C8C8C"  height="3.1248" id="connector0pin"/>
     <g width="2.16" x="2.52" y="21.6" fill="#8C8C8C"  height="2.16" id="connector0terminal"/>
     <polygon fill="#8C8C8C" points="2.52,20.6352,2.52,22.0752,4.68,22.0752,6.12,21.4128,6.12,20.6352" />
