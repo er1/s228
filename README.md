@@ -211,7 +211,7 @@ A flip-flop is two chained D type latches such that the D input for the second c
 - The equations that you have derived for the half-adder
 - A gate diagram for those equations
 - A truth table for a __full-adder__ circuit
-- A gate diagram for and an explination of a D latch
+- A gate diagram for and an explanation of a D latch
 
 Lab reports are due two weeks after they are assigned. __Lab report 1 is due the week of February 10.__
 
