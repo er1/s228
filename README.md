@@ -158,7 +158,7 @@ You will need to construct the truth table above as a configuration of logic gat
 
 - To do this, you will need to construct the Boolean algebra equation for C and S using only the variables A and B.
 - Using these equations you will modify them to use only the AND, OR and NOT operators.
-- This equation will give allow you to draw the gate diagram with the gates availible to you.
+- This equation will allow you to draw the gate diagram with the gates availible to you.
 - Use this gate diagram and the IC pinouts provided at the end of the manual to construct the circuit.
 
 Reminder:
@@ -211,7 +211,7 @@ A flip-flop is two chained D type latches such that the D input for the second c
 - The equations that you have derived for the half-adder
 - A gate diagram for those equations
 - A truth table for a __full-adder__ circuit
-- A gate diagram for and an explination of a D latch
+- A gate diagram for and an explanation of a D latch
 
 Lab reports are due two weeks after they are assigned. __Lab report 1 is due the week of February 10.__
 
