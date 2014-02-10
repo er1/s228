@@ -235,11 +235,18 @@ We will introduce two new logic chips for this purpose.
 
 We will be using the clock signal to general a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
 
-![Example circuit for Lab 4](https://rawgithub.com/er1/s228/master/lab4_bb.svg)
+![Example circuit for Lab 4](https://raw2.github.com/er1/s228/master/lab5_bb.png)
 
 ### Buses and Registers
-#### Flip Flops
-#### Tri-State Buffer
+
+In this lab, you will be building the CPU buses for your computer. A CPU bus is a common system such that registers can move values between each other. In this lab we will build two buses, one where all the registers outputs are attached to one of the ALU inputs, and one where the register inputs are attached to the ALU output. Since the ALU has two inputs, the remaining input will be attached to a controllable 0 or 1.
+
+A Register is a Flop-Flop with a Tri-State buffer attached to make the output controllable. This gives a device which can be attached to a bus for both inputs and outputs. The register will read off the bus attached at its input just as a flip flop would when its enable line is triggered, this works because one output can feed several inputs. The Tri-State buffer allows the output to be controlled by electrically disconnecting it so that we can allow only one value to be output on the bus at a time. Without it, the bus would be attached to more than one output leading to conflicting signals on the bus.
+
+...
+
+![Example circuit for Lab 5](https://raw2.github.com/er1/s228/master/lab5_bb.png)
+
 ### Memory
 ### Control Unit
 ### Running a Program
@@ -248,7 +255,7 @@ We will be using the clock signal to general a clock for the shift register so t
 
 The part numbers on the chips may vary from chip to chip. For this project, the parts have been picked so that you may ignore the letters in the part number. This means the parts SN74HCT04 and 74LS04 would be referred to simply as 7404 and perform the same task.
 
-## 555 Timer
+## [555 Timer](http://en.wikipedia.org/wiki/555_timer_IC)
 
 The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
 
@@ -388,6 +395,7 @@ The 7432 is a chip which contains 4 OR gates.
 - `GND`: Ground
 - `In1`, `In2`: Input bit to shift in on on next rising edge (transition from 0 to 1) of `CLK`
 - `Q#`: Output pin containing the current stored value
+- `RES`: Reset all values to 0
 
 On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contain the previous value of `Q1`, `Q3` will contain the previous value of `Q2` and so on until `Q8`.
 
@@ -395,18 +403,16 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
 
 ```AsciiDoc
         .-._.-.
- OE1   [|     |]   VCC
- OE2   [| 74  |]   CLR
+~OE1   [|     |]   VCC
+~OE2   [| 74  |]   RES
   Q1   [| 173 |]   D1
   Q2   [|     |]   D2
   Q3   [|     |]   D3
   Q4   [|     |]   D4
- CLK   [|     |]   In1
- GND   [|     |]   In2
+ CLK   [|     |]   ~In1
+ GND   [|     |]   ~In2
         '-----'
 ```
-
-<!-- check with datasheet -->
 
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
@@ -415,6 +421,29 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
 - `In1`, `In2`: Enable this to store values from `D#` on the next rising edge of `CLK`
 - `OE1`, `OE2`: Enable this to output values from `Q#`
 - `CLK`: Clock signal
+- `RES`: Reset all values to 0
+
+## 74175 4 bit Flip-Flop
+
+```AsciiDoc
+        .-._.-.
+~RES   [|     |]   VCC
+  Q2   [| 74  |]   Q3
+ ~Q2   [| 175 |]   ~Q3
+  D2   [|     |]   D3
+  D1   [|     |]   D4
+ ~Q1   [|     |]   ~Q4
+  Q1   [|     |]   Q4
+ GND   [|     |]   CLK
+        '-----'
+```
+
+- `VCC`: +5V Supply Voltage
+- `GND`: Ground
+- `D#`: Inputs to Latch on `CLK` rising edge
+- `Q#`: Outputs of Flop-Flop
+- `CLK`: Clock signal to latch on rising edge
+- `RES`: Reset all values to 0
 
 ## 74283 4 bit Adder
 
@@ -439,19 +468,6 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
        [|     |]
        [|     |]
        [|     |]
-       [|     |]
-       [|     |]
-       [|     |]
-       [|     |]
         '-----'
 ```
 
-## [555 Timer IC](http://en.wikipedia.org/wiki/555_timer_IC)
-```AsciiDoc
-        .-._.-.
- GND   [|     |]   VCC
-TRIG   [| 555 |]   DIS
- OUT   [|     |]   THR
-~RES   [|     |]   CTRL
-        '-----'
-```
