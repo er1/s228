@@ -219,11 +219,11 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 ## Project Labs
 
-At this phase, we will start building the lab project for the rest of the course. You may clear off everything on your project board up until now as it will not be needed. Pay close attention to wiring as from now on as we will be keeping everything on the project until the end of the project and poor wiring will make locating mistakes in the lab much more difficult.
+At this phase, we will start building the lab project for the rest of the course. You may clear off everything on your project board up until now as it will not be needed. Pay close attention to wiring as from now on we will be keeping everything on the project until the end of the project and poor wiring will make locating mistakes in the lab much more difficult.
 
 ### System Clock / Clock Signal Generator
 
-In this lab, you will be building system clock for your computer. The system clock is an alternating signal changing from 0 to 1 and back at a regular interval. This signal is used to provide a changeing input which can be used to make the computer work autonomously. Without this signal, the computer would need the user to make a change in inputs for every phase of computation similarly to how in the preliminary labs, our outputs only ever changed when an input was changed.
+In this lab, you will be building system clock for your computer. The system clock is an alternating signal changing from 0 to 1 and back at a regular interval. This signal is used to provide a changing input which can be used to make the computer work autonomously. Without this signal, the computer would need the user to make a change in inputs for every phase of computation similarly to how in the preliminary labs, our outputs only ever changed when an input was changed.
 
 A CPU performs atomic operations called instructions as part of its computation. These intructions have almost one-to-one relationship with lines of code in assembler language (which will be seen in the tutorial for this class) and perform operations such as copying a value from one register to another or more complex operations such as arithmetic and memory access. These instruction may need to occur in several phases so the system clock needs to be expanded into several clock signals where we will have one for each phase. In this lab, we will be constructing a fixed four phase clock generator (meaning that each instruction has four phases even is some do not use all of them and that number is fixed)
 
