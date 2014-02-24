@@ -15,7 +15,7 @@ Topics that will be covered, include:
 
 Due to the nature of this project, this manual is subject to change over time to adapt to the progress of the students.
 
-In this project you will be building a simple computer with a central processing unit with support for a few instruction and some memory. The instructions that will be built are simple operations such moving data between registers and performing simple addition operations.
+In this project you will be building a simple computer with a central processing unit with support for a few instructions and some memory. The instructions that will be implemented are simple operations such moving data between registers and performing simple addition operations.
 
 By the end of the project, your computer should be able to demonstrate the operation of the following program:
 
@@ -30,13 +30,13 @@ INC B
 
 ## Power Supply
 
-In this project, we will be using a standard 5 volt direct current power supply. We will be using the positive connection to connect to our supply rail called `VCC` and is by convention red. The negative connection will connect to our reference rail called ground or `GND` and is by convention black but may appear at times in blue.
+In this project, we will be using a standard 5 volt direct current power supply. We will be connecting the positive terminal to our supply rail called `VCC` and this is by convention red colored. The negative terminal will be connected to our reference rail called ground or `GND` and is by convention black but may appear at times as blue.
 
 In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
 
-In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electronic connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
+In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electric connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
 
 The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins.
 
@@ -73,7 +73,7 @@ We will be using a strip of switches to toggle between data values.
 
 # Data Representation
 
-Inside the computer, we need a way of representing information, however, the only means we have is through wires. The information we can store on a wire is called a bit and is the absence or presence of a voltage relative to a common reference. The convention we have adopted is that the presence of a voltage represents a logical `1` and the absence of a voltage represents a logical `0`
+Inside the computer, we need a way of representing information, however, the only means we have is through voltage levels. The information we can store on a register is called a bit and is the absence or presence of a voltage potential relative to a common reference. The convention we have adopted is that the presence of a voltage represents a logical `1` and the absence of a voltage represents a logical `0`
 
 ## Binary
 
@@ -198,9 +198,9 @@ In this part of the lab, you will construct a D type latch and test its ability 
 
 ## Flip-Flops
 
-Latches are level triggered which in the case of D latches, means that when the level of E is high (E = 1) it stores the value from D which may change change while E is high. This is not an ideal behaviour because we would like to sample a particular value at a particular time. This behavior is called edge-triggered and is the moment when a value changes in a particular direction. The positive edge or rising edge is when a value goes from 0 to 1 and the negative edge or falling edge is when a value goes from 1 to 0. 
+Latches are level-triggered which in the case of D latches, means that when the level of E is high (E = 1) it stores the value from D which may change change while E is high. This is not an ideal behaviour because we would like to sample a particular value at a particular time. This behavior is called edge-triggered and is the moment when a value changes in a particular direction. The positive edge or rising edge is when a value goes from 0 to 1 and the negative edge or falling edge is when a value goes from 1 to 0. 
 
-A flip-flop is two chained D type latches such that the D input for the second comes from the Q output of the first. E is inverted for the second one. This means that at all times, E is keeping the value locked for exactly one of the latches in the flip-flop.
+A flip-flop is two chained D-type latches such that the D input for the second comes from the Q output of the first. E is inverted for the second one. This means that at all times, E is keeping the value locked for exactly one of the latches in the flip-flop.
 
 [Wikipedia Page on Flip-Flops](http://en.wikipedia.org/wiki/Flip-flop_%28electronics%29)
 
@@ -225,7 +225,7 @@ At this phase, we will start building the lab project for the rest of the course
 
 In this lab, you will be building system clock for your computer. The system clock is an alternating signal changing from 0 to 1 and back at a regular interval. This signal is used to provide a changing input which can be used to make the computer work autonomously. Without this signal, the computer would need the user to make a change in inputs for every phase of computation similarly to how in the preliminary labs, our outputs only ever changed when an input was changed.
 
-A CPU performs atomic operations called instructions as part of its computation. These intructions have almost one-to-one relationship with lines of code in assembler language (which will be seen in the tutorial for this class) and perform operations such as copying a value from one register to another or more complex operations such as arithmetic and memory access. These instruction may need to occur in several phases so the system clock needs to be expanded into several clock signals where we will have one for each phase. In this lab, we will be constructing a fixed four phase clock generator (meaning that each instruction has four phases even is some do not use all of them and that number is fixed)
+The primary function of a CPU is to perform a set of operations called instructions. These intructions have an almost one-to-one relationship with lines of code in assembler language (which will be seen in the tutorial for this class) and perform operations such as copying a value from one register to another or more complex operations such as arithmetic and memory access. These instructions may need to occur in several phases so the system clock needs to be expanded into several clock signals where we will have one for each phase. In this lab, we will be constructing a fixed four phase clock generator (meaning that each instruction has four phases even is some do not use all of them and that number is fixed)
 
 We will introduce two new logic chips for this purpose.
 
