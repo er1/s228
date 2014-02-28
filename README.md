@@ -235,7 +235,7 @@ We will introduce two new logic chips for this purpose.
 
 We will be using the clock signal to general a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
 
-![Example circuit for Lab 4](https://raw2.github.com/er1/s228/master/lab5_bb.png)
+![Example circuit for Lab 4](https://raw2.github.com/er1/s228/master/lab4_bb.png)
 
 ### Buses and Registers
 
@@ -247,7 +247,23 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 
 ![Example circuit for Lab 5](https://raw2.github.com/er1/s228/master/lab5_bb.png)
 
+#### To include in Lab Report 2
+
+- An explanation of why a clock signal is needed in a computer
+- The relation between the clock signal and instrution phase signals and why we need instruction phases
+- How we derived the phase signals (hint: shift register and feedback)
+- An explanation of the general achitecture of the computer
+- Describe the functions of an ALU and compare it to what we have built in the lab
+- Describe how one would perform the register transfer language operation A -> B
+
+Lab reports are due two weeks after they are assigned. __Lab report 2 is due the week of March 10.__
+
+There will be a 10% __deduction__ on the lab grade if you fail to include your name or <span style="color: red">group number</span> on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+
 ### Memory
+
+In this lab, you will be building the RAM for your computer, it will be comprised of 4 registers selected through a decoder. This will give us a 4x4 memory unit with 4 data lines and 2 address lines.
+
 ### Control Unit
 ### Running a Program
 
