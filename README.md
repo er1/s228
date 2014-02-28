@@ -258,7 +258,7 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 
 Lab reports are due two weeks after they are assigned. __Lab report 2 is due the week of March 10.__
 
-There will be a 10% __deduction__ on the lab grade if you fail to include your name or <span style="color: red">group number</span> on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
 ### Memory
 
