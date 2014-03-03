@@ -272,7 +272,7 @@ In this lab, we will also be including our Instruction Register (IR) which will 
 
 ...
 
-![Example circuit for Lab 5](https://raw2.github.com/er1/s228/master/lab5_bb.png)
+![Example circuit for Lab 6](https://raw2.github.com/er1/s228/master/lab6_bb.png)
 
 #### To include in Lab Report 3
 
