@@ -264,6 +264,28 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 In this lab, you will be building the RAM for your computer, it will be comprised of 4 registers selected through a decoder. This will give us a 4x4 memory unit with 4 data lines and 2 address lines.
 
+In a computer, we only have a small number of registers to store data. Typically, we need to store much more information than the registers provide us. For this reason, we use main memory. Main memory is a large array of memory units (typically flip flops) that we can access by choosing which unit we want access to through a register and performing operations to that unit as we normally would to a register. This means we need two special purpose registers in our CPU. We have a Memory Address Register (MAR) which picks which memory unit we want to access using its address (similar to an index for an array) and a Memory Data Register (MDR) which exposes the contents of a particular memory address to the CPU. It is important to note that the MAR is a write only register since we only ever specify memory locations and the MDR is not actually a register but a means of exposing memory as a register.
+
+We are using four register as our memory units in this lab. These registers are are selected though a decoder. The decoder gets an address from the MAR and uses it to select which register should be active.
+
+In this lab, we will also be including our Instruction Register (IR) which will be used in the next lab.
+
+...
+
+![Example circuit for Lab 5](https://raw2.github.com/er1/s228/master/lab5_bb.png)
+
+#### To include in Lab Report 3
+
+- An explanation of how memory works
+- The difference between registers and memory
+- Did we build static memory or dynamic memory, what are the differences between them?
+- How many address lines did we have and how many addresses did that give us?
+- Assume that we are still using a 4 bit word size.  How many address lines and data lines would we need if we were to have had 8 words of memory? and for 16 words of memory?
+
+Lab reports are due two weeks after they are assigned. __Lab report 2 is due the week of March 17.__
+
+There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+
 ### Control Unit
 ### Running a Program
 
