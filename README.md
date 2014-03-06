@@ -225,15 +225,15 @@ At this phase, we will start building the lab project for the rest of the course
 
 In this lab, you will be building system clock for your computer. The system clock is an alternating signal changing from 0 to 1 and back at a regular interval. This signal is used to provide a changing input which can be used to make the computer work autonomously. Without this signal, the computer would need the user to make a change in inputs for every phase of computation similarly to how in the preliminary labs, our outputs only ever changed when an input was changed.
 
-The primary function of a CPU is to perform a set of operations called instructions. These intructions have an almost one-to-one relationship with lines of code in assembler language (which will be seen in the tutorial for this class) and perform operations such as copying a value from one register to another or more complex operations such as arithmetic and memory access. These instructions may need to occur in several phases so the system clock needs to be expanded into several clock signals where we will have one for each phase. In this lab, we will be constructing a fixed four phase clock generator (meaning that each instruction has four phases even is some do not use all of them and that number is fixed)
+The primary function of a CPU is to perform a set of operations called instructions. These instructions have an almost one-to-one relationship with lines of code in assembler language (which will be seen in the tutorial for this class) and perform operations such as copying a value from one register to another or more complex operations such as arithmetic and memory access. These instructions may need to occur in several phases so the system clock needs to be expanded into several clock signals where we will have one for each phase. In this lab, we will be constructing a fixed four phase clock generator (meaning that each instruction has four phases, even if some do not use all of them and that number is fixed).
 
 We will introduce two new logic chips for this purpose.
 
-- The 555 chip which is a chip used to control timing. we will wire it up in asyncronous mode so that it generates the alternating signal from one to zero. This setup uses an RC tank circuit to control the timing of the signal meaning the values of the resistors and capacitor control how fast the value changes.
+- The 555 chip which is a chip used to control timing. We will wire it up in asyncronous mode so that it generates the alternating signal from one to zero. This setup uses an RC tank circuit to control the timing of the signal meaning the values of the resistors and capacitor control how fast the value changes.
 
-- The 74164 chip which is a serial-in-parallel-out (SIPO) shift register. A SIPO shift register is chip with several flip-flops chained up internally so that all the outputs of each flip-flop are accessible on their own pin and where the inputs are provided by the preceding flip-flop's output. The first input is made accessible on a pin which we use to shift values in.
+- The 74164 chip which is a serial-in-parallel-out (SIPO) shift register. A SIPO shift register is a chip with several flip-flops chained up internally so that all the outputs of each flip-flop are accessible on their own pin and where the inputs are provided by the preceding flip-flop's output. The first input is made accessible on a pin which we use to shift values in.
 
-We will be using the clock signal to general a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
+We will be using the clock signal to generate a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
 
 ![Example circuit for Lab 4](https://raw2.github.com/er1/s228/master/lab4_bb.png)
 
@@ -250,9 +250,9 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 #### To include in Lab Report 2
 
 - An explanation of why a clock signal is needed in a computer
-- The relation between the clock signal and instrution phase signals and why we need instruction phases
+- The relation between the clock signal and instruction phase signals and why we need instruction phases
 - How we derived the phase signals (hint: shift register and feedback)
-- An explanation of the general achitecture of the computer
+- An explanation of the general architecture of the computer
 - Describe the functions of an ALU and compare it to what we have built in the lab
 - Describe how one would perform the register transfer language operation A -> B
 
