@@ -251,7 +251,10 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 
 - An explanation of why a clock signal is needed in a computer
 - The relation between the clock signal and instrution phase signals and why we need instruction phases
-- How we derived the phase signals (hint: shift register and feedback)
+  - The clock signal is the signal that alternates between zero and one
+  - The phase signals are the four signals that we brought out to the LEDs
+- How we derived the phase signals 
+  - hint: shift register and feedback
 - An explanation of the general achitecture of the computer
 - Describe the functions of an ALU and compare it to what we have built in the lab
 - Describe how one would perform the register transfer language operation A -> B
@@ -287,6 +290,26 @@ Lab reports are due two weeks after they are assigned. __Lab report 2 is due the
 There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
 ### Control Unit
+
+In this lab, we will be building the control unit for your computer. The control unit is what will control how the cpu handles machine language instruction.
+
+```AsciiDoc
+add1	=	&not;( ph1 &and; ( ph2 &or; ir0 ) )
+pc_out	=	ph1
+pc_in	=	ph1
+a_out	=	ph2 &or; &not;ir3
+a_in	=	ph2 &or; ir1
+b_out	=	ph2 &or; ir3
+b_in	=	ph2 &or; ir2
+led_la	=	?_in &or; clock
+mar_la	=	ph1 &or; clock
+
+ir0: Inc
+ir1: Ain
+ir2: Bin
+ir3: Bout/&not;Aout
+```
+
 ### Running a Program
 
 # Description of Chips Used
