@@ -289,26 +289,55 @@ Lab reports are due two weeks after they are assigned. __Lab report 2 is due the
 
 There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
+`If you are unable to complete the lab before the deadline for technical reasons, there will be no grade penalty.` 
+`Please inform your lab instructor before the deadline if this is the case`
+
 ### Control Unit
 
 In this lab, we will be building the control unit for your computer. The control unit is what will control how the cpu handles machine language instruction.
 
-add1	=	&not;( ph1 &and; ( ph2 &or; ir0 ) )  
-pc_out	=	ph1  
-pc_in	=	ph1  
-a_out	=	ph2 &or; &not;ir3  
-a_in	=	ph2 &or; ir1  
-b_out	=	ph2 &or; ir3  
-b_in	=	ph2 &or; ir2  
-led_la	=	?_in &or; clock  
-mar_la	=	ph1 &or; clock
+`add1` = &not;( `phase1` &and; ( `phase2` &or; `ir1` ) )  
+`pc out` = `phase1`  
+`pc in` = `phase1`  
+`a out` = `phase2` &or; &not;`ir4`  
+`a in` = `phase2` &or; `ir2`  
+`b out` = `phase2` &or; `ir4`  
+`b in` = `phase2` &or; `ir3`  
+`led latch` = `? in` &or; `clock`  
+`mar latch` = `phase1` &or; `clock`
 
-ir0: Inc  
-ir1: Ain  
-ir2: Bin  
-ir3: Bout/&not;Aout
+#### Signal description
+
+- `phase1` is the first clock signal brought out to the LEDs in lab 4
+- `phase2` is the second clock signal brought out to the LEDs in lab 4
+
+- `add1` is pin 6 on the 74283 in lab 5 
+- `pc in` is pin 9 on the 74173 representing the PC register in lab 5
+- `pc out` is pin 1 on the 74173 representing the PC register in lab 5
+- `a in` is pin 9 on the 74173 representing the A register in lab 5
+- `a out` is pin 1 on the 74173 representing the A register in lab 5
+- `b in` is pin 9 on the 74173 representing the B register in lab 5
+- `b out` is pin 1 on the 74173 representing the B register in lab 5
+- `led latch` is pin 9 on the 74175 in lab 5
+
+- `mar latch` is pin 9 on the 74175 representing the MAR in lab 6
+- `ir1` comes from the bit 1 in the instruction register in lab 6
+- `ir2` comes from the bit 2 in the instruction register in lab 6
+- `ir3` comes from the bit 3 in the instruction register in lab 6
+- `ir4` comes from the bit 4 in the instruction register in lab 6
+
+##### Signal names
+
+ir1: Inc  
+ir2: Ain  
+ir3: Bin  
+ir4: Bout/&not;Aout
 
 ### Running a Program
+
+In this lab, we will store a program in memory and have your computer run it.
+
+In the previous lab, we set up the control unit to have the computer control how data was moving through the bus. The control unit used a machine language instruction along with a the clock signal phase to control which registers were storing values and which output their value to control the data flow from the registers.
 
 # Description of Chips Used
 
