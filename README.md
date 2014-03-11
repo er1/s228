@@ -293,22 +293,20 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 In this lab, we will be building the control unit for your computer. The control unit is what will control how the cpu handles machine language instruction.
 
-```AsciiDoc
-add1	=	&not;( ph1 &and; ( ph2 &or; ir0 ) )
-pc_out	=	ph1
-pc_in	=	ph1
-a_out	=	ph2 &or; &not;ir3
-a_in	=	ph2 &or; ir1
-b_out	=	ph2 &or; ir3
-b_in	=	ph2 &or; ir2
-led_la	=	?_in &or; clock
+add1	=	&not;( ph1 &and; ( ph2 &or; ir0 ) )  
+pc_out	=	ph1  
+pc_in	=	ph1  
+a_out	=	ph2 &or; &not;ir3  
+a_in	=	ph2 &or; ir1  
+b_out	=	ph2 &or; ir3  
+b_in	=	ph2 &or; ir2  
+led_la	=	?_in &or; clock  
 mar_la	=	ph1 &or; clock
 
-ir0: Inc
-ir1: Ain
-ir2: Bin
+ir0: Inc  
+ir1: Ain  
+ir2: Bin  
 ir3: Bout/&not;Aout
-```
 
 ### Running a Program
 
