@@ -285,7 +285,7 @@ In this lab, we will also be including our Instruction Register (IR) which will 
 - How many address lines did we have and how many addresses did that give us?
 - Assume that we are still using a 4 bit word size.  How many address lines and data lines would we need if we were to have had 8 words of memory? and for 16 words of memory?
 
-Lab reports are due two weeks after they are assigned. __Lab report 2 is due the week of March 17.__
+Lab reports are due two weeks after they are assigned. __Lab report 3 is due the week of March 17.__
 
 There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
