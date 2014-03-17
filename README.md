@@ -328,16 +328,56 @@ In this lab, we will be building the control unit for your computer. The control
 
 ##### Signal names
 
-ir1: Inc  
-ir2: Ain  
-ir3: Bin  
-ir4: Bout/&not;Aout
+`ir1: `+1`
+`ir2: `Ain`  
+`ir3: `Bin`  
+`ir4: `Bout`/&not;`Aout`
 
 ### Running a Program
 
 In this lab, we will store a program in memory and have your computer run it.
 
 In the previous lab, we set up the control unit to have the computer control how data was moving through the bus. The control unit used a machine language instruction along with a the clock signal phase to control which registers were storing values and which output their value to control the data flow from the registers.
+
+Recall that in the last lab, we assigned names to the bits of the instruction register (`ir3` became `Bin` and so on). These names were given since they signify a particular signal is to be active when that bit is active.
+
+If we create a table of all the combinations for the instruction register, we can see which signals should be active for that instruction register value. With that knowledge we can see which registers are moving values and then derive register transfer notation for each of our instruction and subsequently name them accordingly.
+
+We only want to look at the signals active during phase2 since phase1 is always adding one to PC and reading the instruction.
+
+| Value | Active signals                | Transfer Notation | Instruction Name |
+| ----- | ----------------------------- | ----------------- | ---------------- |
+| 0000 | `add1`, `a in`, `b in`, `b out` | B + 1 -> A, B    | *        |
+| 0001 |         `a in`, `b in`, `b out` | B -> A, B        | *        |
+| 0010 | `add1`          `b in`, `b out` | B + 1 -> B       | Inc B    |
+| 0011 |                 `b in`, `b out` | B -> B           | NOP      |
+| 0100 | `add1`, `a in`          `b out` | B + 1 -> A       | *        |
+| 0101 |         `a in`          `b out` | B -> A           | Mov A, B |
+| 0110 | `add1`                  `b out` | B + 1 -> &empty; | *        |
+| 0111 |                         `b out` | B -> &empty;     | *        |
+| 1000 | `add1`, `a in`, `b in`, `a out` | A + 1 -> A, B    | *        |
+| 1001 |         `a in`, `b in`, `a out` | A -> A, B        | *        |
+| 1010 | `add1`          `b in`, `a out` | A + 1 -> B       | *        |
+| 1011 |                 `b in`, `a out` | A -> B           | Mov B, A |
+| 1100 | `add1`, `a in`          `a out` | A + 1 -> A       | Inc A    |
+| 1101 |         `a in`          `a out` | A -> A           | *        |
+| 1110 | `add1`                  `a out` | A + 1 -> &empty; | *        |
+| 1111 |                         `a out` | A -> &empty;     | *        |
+
+( * ) Undocumented Instruction: Instruction not intended for use
+
+#### Testing
+
+Program into memory the following program:
+
+```AsciiDoc
+MOV A, B
+INC B
+MOV B, A
+INC B
+```
+
+You will need to move the wires in lab 6 on the MAR from switch to the in bus in lab 5. `? in` in lab 7 should be attached to `b in`.
 
 # Description of Chips Used
 
