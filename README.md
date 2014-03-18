@@ -311,6 +311,7 @@ In this lab, we will be building the control unit for your computer. The control
 - `phase1` is the first clock signal brought out to the LEDs in lab 4
 - `phase2` is the second clock signal brought out to the LEDs in lab 4
 
+
 - `add1` is pin 6 on the 74283 in lab 5 
 - `pc in` is pin 9 on the 74173 representing the PC register in lab 5
 - `pc out` is pin 1 on the 74173 representing the PC register in lab 5
@@ -320,6 +321,7 @@ In this lab, we will be building the control unit for your computer. The control
 - `b out` is pin 1 on the 74173 representing the B register in lab 5
 - `led latch` is pin 9 on the 74175 in lab 5
 
+
 - `mar latch` is pin 9 on the 74175 representing the MAR in lab 6
 - `ir1` comes from the bit 1 in the instruction register in lab 6
 - `ir2` comes from the bit 2 in the instruction register in lab 6
@@ -328,10 +330,10 @@ In this lab, we will be building the control unit for your computer. The control
 
 ##### Signal names
 
-`ir1: `+1`
-`ir2: `Ain`  
-`ir3: `Bin`  
-`ir4: `Bout`/&not;`Aout`
+`ir1`: `+1`
+`ir2`: `Ain`  
+`ir3`: `Bin`  
+`ir4`: `Bout`/&not;`Aout`
 
 ### Running a Program
 
@@ -345,7 +347,7 @@ If we create a table of all the combinations for the instruction register, we ca
 
 We only want to look at the signals active during phase2 since phase1 is always adding one to PC and reading the instruction.
 
-| Value | Active signals                | Transfer Notation | Instruction Name |
+| Value if `ir4` `ir3` `ir2` `ir1` | Active signals                | Transfer Notation | Instruction Name |
 | ----- | ----------------------------- | ----------------- | ---------------- |
 | 0000 | `add1`, `a in`, `b in`, `b out` | B + 1 -> A, B    | *        |
 | 0001 |         `a in`, `b in`, `b out` | B -> A, B        | *        |
