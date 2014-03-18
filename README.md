@@ -386,6 +386,8 @@ You will need to move the wires in lab 6 on the MAR from switch to the in bus in
 
 The part numbers on the chips may vary from chip to chip. For this project, the parts have been picked so that you may ignore the letters in the part number. This means the parts SN74HCT04 and 74LS04 would be referred to simply as 7404 and perform the same task.
 
+Chips are numbered counter-clockwise starting at the notch on the chip (on the top of the diagram).
+
 ## [555 Timer](http://en.wikipedia.org/wiki/555_timer_IC)
 
 The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
