@@ -306,6 +306,10 @@ In this lab, we will be building the control unit for your computer. The control
 `led latch` = `? in` &or; `clock`  
 `mar latch` = `phase1` &or; `clock`
 
+Note: You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
+
+After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
+
 #### Signal description
 
 * Lab 4: Clock Signal Generator
@@ -346,7 +350,7 @@ If we create a table of all the combinations for the instruction register, we ca
 
 We only want to look at the signals active during phase2 since phase1 is always adding one to PC and reading the instruction.
 
-| Value | Active signals                | Transfer Notation | Instruction Name |
+| Value &dagger; | Active signals                | Transfer Notation | Instruction Name |
 | ----- | ----------------------------- | ----------------- | ---------------- |
 | 0000 | `add1`, `a in`, `b in`, `b out` | B + 1 -> A, B    | *        |
 | 0001 |         `a in`, `b in`, `b out` | B -> A, B        | *        |
@@ -365,11 +369,17 @@ We only want to look at the signals active during phase2 since phase1 is always 
 | 1110 | `add1`                  `a out` | A + 1 -> &empty; | *        |
 | 1111 |                         `a out` | A -> &empty;     | *        |
 
+&dagger; Value is in the order: `ir4` `ir3` `ir2` `ir1`
+
 ( * ) Undocumented Instruction: Instruction not intended for use
 
-Value is in the order: `ir4` `ir3` `ir2` `ir1`
-
 #### Testing
+
+We need to verify that all our defined instructions (`Inc B`, `Mov A, B`, `Mov B, A`) work. To do this we program that instruction into memory and check if it behaves as it should. In the case of `Inc A` which cause A to increase by one, we would need to attach `?_in` to `a_in` so that the LED latches the value of A so that we can see if A is in fact counting up by one.
+
+Once all the instructions work, program a simple program into memory. The instruction register will need to latch instruction from memory based on the address stored in the program counter. This means that the MAR cannot be attached to the switches used for programming but to the in bus. To do this, move the wires on pins 4 and 5 on the MAR flip-flop so that they connect to pins 4 and 5 on the LED flip-flop. Pins 4 and 5 on the LED flip-flop connect to the lower order bits on the in bus.
+
+#### Final Program
 
 Program into memory the following program:
 
@@ -380,7 +390,23 @@ MOV B, A
 INC B
 ```
 
-You will need to move the wires in lab 6 on the MAR from switch to the in bus in lab 5. `? in` in lab 7 should be attached to `b in`.
+`? in` in lab 7 should be attached to `b in` so that the lab instructor can see the value stored in register B and verify the proper running of the program.
+
+#### To include in Lab Report 4
+
+__SUBJECT TO CHANGE__
+
+- The architecture of the computer
+- A description of what the control unit does
+- The functionality of the control unit implemented in the lab
+- How a program was loaded into memory
+- How a program in memory wass run
+
+Lab report deadline will be discussed during the lab session.
+
+There will be a 10% __deduction__ on the lab grade if you fail to include both your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+
+
 
 # Description of Chips Used
 
