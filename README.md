@@ -633,7 +633,7 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
         '-----'
 ```
 
-(PEOPLE WERE ALSO CONFUSED ABOUT THIS SO I ADDED IT, EVEN THOUGH ITS EAST TO GOOGLE I GUESS)
+(PEOPLE WERE ALSO CONFUSED ABOUT THIS SO I ADDED IT, EVEN THOUGH ITS EASY TO GOOGLE I GUESS)
 
 # PIN Enumeration
 
