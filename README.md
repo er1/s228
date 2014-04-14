@@ -632,6 +632,21 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
  GND   [|     |]   Cout
         '-----'
 ```
+# PIN enumeration
+
+```AsciiDoc
+        .-._.-.
+   1   [|     |]   16
+   2   [| 74  |]   15
+   3   [| 173 |]   14
+   4   [|     |]   13
+   5   [|     |]   12
+   6   [|     |]   11
+   7   [|     |]   10
+   8   [|     |]   9
+        '-----'
+```
+
 
 # Test Area
 
