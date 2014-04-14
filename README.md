@@ -632,7 +632,12 @@ On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contai
  GND   [|     |]   Cout
         '-----'
 ```
-# PIN enumeration
+
+(PEOPLE WERE ALSO CONFUSED ABOUT THIS SO I ADDED IT, EVEN THOUGH ITS EAST TO GOOGLE I GUESS)
+
+# PIN Enumeration
+
+Pin are numberd in an anticlockwise fashion like so:
 
 ```AsciiDoc
         .-._.-.
