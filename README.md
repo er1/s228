@@ -378,7 +378,7 @@ We only want to look at the signals active during phase3 since phase1 is always 
 
 We need to verify that all our defined instructions (`Inc B`, `Mov A, B`, `Mov B, A`) work. To do this we program that instruction into memory and check if it behaves as it should. In the case of `Inc A` which cause A to increase by one, we would need to attach `?_in` to `a_in` so that the LED latches the value of A so that we can see if A is in fact counting up by one.
 
-Once all the instruction/ work, program a simple program into memory. The instruction register will need to latch instruction from memory based on the address stored in the program counter. This means that the MAR cannot be attached to the switches used for programming but to the in bus. To do this, move the wires on pins 4 and 5 on the MAR flip-flop so that they connect to pins 4 and 5 on the LED flip-flop. Pins 4 and 5 on the LED flip-flop connect to the lower order bits on the in bus.
+Once all the instructions work, program a simple program into memory. The instruction register will need to latch instruction from memory based on the address stored in the program counter. This means that the MAR cannot be attached to the switches used for programming. Instead, the MAR should be attached to the in-bus. To do this, move the wires on pins 4 and 5 on the MAR flip-flop so that they connect to pins 4 and 5 on the LED flip-flop. Pins 4 and 5 on the LED flip-flop connect to the lower order bits on the in-bus.
 
 #### Final Program
 
@@ -401,7 +401,7 @@ __SUBJECT TO CHANGE__
 - A description of what the control unit does
 - The functionality of the control unit implemented in the lab
 - How a program was loaded into memory
-- How a program in memory wass run
+- How a program in memory was run
 
 Lab report deadline will be discussed during the lab session.
 
@@ -423,7 +423,7 @@ Chips are numbered counter-clockwise starting at the notch on the chip (on the t
 
 ## [555 Timer](http://en.wikipedia.org/wiki/555_timer_IC)
 
-The 555 Timer Chip is a chip used to generate various output waveforms, for our purpose, we will be using it to generate out clock signal the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course however more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
+The 555 Timer Chip is a chip used to generate various output waveforms. For our purpose, we will be using it to generate our clock signal in the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course.  However, more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
 
 ```AsciiDoc
         .-._.-.
@@ -437,11 +437,11 @@ TRIG   [| 555 |]   DIS
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
 - `OUT`: Output waveform
-- `TRIG`, `RES`, `CTRL`, `THR`, `DIS`: This pins determine how the chip should generate its output waveform.
+- `TRIG`, `RES`, `CTRL`, `THR`, `DIS`: These pins determine how the chip should generate its output waveform.
 
 ## 7404 NOT Gate (x6)
 
-The 7404 is a chip which contains 6 NOT gates also know as inverters.
+The 7404 is a chip that contains 6 NOT gates, also known as inverters.
 
 `Yn` = ~`An`
 
@@ -464,7 +464,7 @@ The 7404 is a chip which contains 6 NOT gates also know as inverters.
 
 ## 7408 AND Gate (x4) 
 
-The 7408 is a chip which contains 4 AND gates.
+The 7408 is a chip that contains 4 AND gates.
 
 `Yn` = `An` &and; `Bn`
 
@@ -488,7 +488,7 @@ The 7408 is a chip which contains 4 AND gates.
 
 ## 7432 OR Gate (x4)
 
-The 7432 is a chip which contains 4 OR gates.
+The 7432 is a chip that contains 4 OR gates.
 
 `Yn` = `An` &or; `Bn`
 
@@ -528,7 +528,7 @@ The 7432 is a chip which contains 4 OR gates.
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
 - `A#`: Input bit `n` of a binary number
-- `#`: Output pin will be 0 if `A1`-`A4` match `#` otherwise it will be 1
+- `#`: Output pin would be 0 if `A1`-`A4` match `#`. Otherwise, it would be 1.
 
 | A4 | A3 | A2 | A1 | &bull; | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -559,11 +559,11 @@ The 7432 is a chip which contains 4 OR gates.
 
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
-- `In1`, `In2`: Input bit to shift in on on next rising edge (transition from 0 to 1) of `CLK`
+- `In1`, `In2`: Input bit to shift in on the next rising edge (transition from 0 to 1) of `CLK`
 - `Q#`: Output pin containing the current stored value
 - `RES`: Reset all values to 0
 
-On shift the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contain the previous value of `Q1`, `Q3` will contain the previous value of `Q2` and so on until `Q8`.
+On shift, the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will contain the previous value of `Q1`, `Q3` will contain the previous value of `Q2` and so on until `Q8`.
 
 ## 74173 4 bit Register
 
