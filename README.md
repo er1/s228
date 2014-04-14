@@ -308,6 +308,13 @@ In this lab, we will be building the control unit for your computer. The control
 
 Note: You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
 
+
+(SO MY IDEA IS ADDING DEBBUGGING TIPS. HOWEVER DUMB THIS MIGHT SEEM, AFTER I FINISHED MY LAB, PEOPLE ASKED ME WHAT WAS WRONG WITH THEIRS, BUT DIDN'T HAVE A GOOD IDEA FOR A STRATEGY FOR DEBUGGING, SO I HELPED KINDA LIKE THIS:)
+
+To verify if your equations ARE correct, you can debug the output of every equation by connecting each of them to a spare LED one by one, and changing the data in the instruction registers accordingly. For example, make your address lines fixed, and make every bit in the instruction register low except for ir4. If you verify the equation that is proposed for "a out", this output must be always active when ir4 is active. If you set ir4 back to low again, "a out" should now become phase 3. Similar logic can be applied to the output of add1, which becomes phase 1 when ir1 is active, and (ph1^ph3) when ir1 is low. If one of your outputs is not working correctly, backtrace them to the chips that are creating the equation. This is particularly important since WRONG CHIPS OFTEN END UP IN THE WRONG BOXES, AND CHIPS OFTEN HAVE A FEW PINS BURNT OUT, and this is a way to correct these issues.
+
+(OK, END OF USELESS RANT)
+
 After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
 
 #### Signal description
