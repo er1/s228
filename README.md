@@ -334,9 +334,12 @@ In this lab, we will be building the control unit for your computer. The control
 `led latch` = `? in` &or; `clock`  
 `mar latch` = `phase1` &or; `clock`
 
-Note: You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
+Notes: (1) You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
 
-After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
+(2) After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
+
+(3) To test if your mar latch and your led latch are latching or working correctly, you can attach a wire from the 9 pin of each latch to a working led light. Observe the resulting display patterns. Your mar latch light should act the same as your phase 1 light from your clock. Your led latch light should act the same as your phase 3 light from your clock. This means that your mar latch is latching at phase 1 and your led latch light is latching at phase 3. 
+
 
 #### Signal description
 
