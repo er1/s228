@@ -223,27 +223,27 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 1.  Always use a color convention!!! ( VCC = RED, Ground = BLACK)  `TIP : it will help you to use the same color when you want to propagate your clock signal throughout your breadboard`
 
-2. Please use shorter wires when you want to connect something. Your breadboard will look much cleaner and will cause you less problems if you even need to do some debugging later on.
+2. Please use shorter wires when you want to connect something. Your breadboard will look much cleaner and will cause you less problems if you even need to do some debugging later on. If it shorts, it won't work.
 
 3. Always try to wire your circuit as neatly as possible. 
 
 ### Debugging
 
-1. Make sure that you are using the correct chip and that its pins aren't bended.
+1. Make sure that you are using the correct chip and that its pins aren't bended. `TIP: some of the chips are being used for a second time, so the pins might already be bent or will bend when you puch them in`
 
 2. Check if your ground and power pins of all your logic chips are connected correctly.
 
 3. During the construction of your circuit, you may have incorrectly  connected a cable. To find this error, you will need to create a "debugging cable". 
-  * Connect 1 long red cable to a LED. 
+  * Connect 1 long red cable to a LED in series with a resistor. `IF YOU DO NOT, IT WILL BURN THE LED` 
    `Since red is used for vcc in your color convention, no one will be mislead in error that it is a required cable in your circuit.`  
   *  When you will connect this cable to a random pin on your breadboard, it will show you its data.
   +  **E.G.** 
-      You want to make sure that you have spread your clock signal correctly on your breadboard. 
+      You want to make sure that you have spread your clock signal correctly on your breadboard. `TIP: use the same color eg. GREEN`
       + Connect your 'debug cable' to a pin that is supposed to be receiving a clock signal. If your debug LED is not showing you the clock signal, then you have found your problem, however, if it is showing the correct pattern, then you can proceed to the next pin to be tested. 
       + This process can be used to verify if a chip is receiving the correct input or producing the good output. 
       + `Faulty chip can be found using this method`
 
-4. You may also add more LED on you breadboard to show intermediate result. It could help you isolate problem later on. 
+4. You may also add more LEDs on you breadboard to show intermediate result. It could help you isolate problem later on. 
 
 ## Project Labs
 
