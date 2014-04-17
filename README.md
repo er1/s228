@@ -229,13 +229,14 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 ### Debugging
 
-1. Make sure that you are using the correct chip and that its pins aren't bended. `TIP: some of the chips are being used for a second time, so the pins might already be bent or will bend when you puch them in`
+1. Make sure that you are using the correct chip and that its pins aren't bended. `TIP: some of the chips are being used for a second time, so the pins might already be bent or will bend when you push them in`
 
 2. Check if your ground and power pins of all your logic chips are connected correctly.
 
 3. During the construction of your circuit, you may have incorrectly  connected a cable. To find this error, you will need to create a "debugging cable". 
   * Connect 1 long red cable to a LED in series with a resistor. `IF YOU DO NOT, IT WILL BURN THE LED` 
-   `Since red is used for vcc in your color convention, no one will be mislead in error that it is a required cable in your circuit.`  
+   
+`Since red is used for vcc in your color convention, no one will be mislead in error that it is a required cable in your circuit.`  
   *  When you will connect this cable to a random pin on your breadboard, it will show you its data.
   +  **E.G.** 
       You want to make sure that you have spread your clock signal correctly on your breadboard. `TIP: use the same color eg. GREEN`
