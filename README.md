@@ -244,6 +244,12 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 4. You may also add more LEDs on you breadboard to show intermediate result. It could help you isolate problem later on. 
 
+### Advanced Debugging with Arduino
+
+Some parts of the lab may be difficult to debug with traditional techniques without modifications to the circuit. For example, the bus serves multiple purposes and contains different values each clock phase. To debug a certain phase, it may be useful to use an external circuit such as an Arduino to detect the wanted clock pulse and read the bus only during that micro operation. This can be achieved with the Arduino using it's interrupt functionality to execute the code reading probe lines only when the interrupt pin is activated. The included arduino code works by attaching a clock pulse to pin 2, and then using pins 4 through 7 as probes. Each time pin 2 is activated, it will print out the values of pins 4 to 7 over serial (To access the serial monitor in the Arduino IDE: Tools > Serial Monitor). For example, if one would want to debug that the programming counter is properly sending its value to the MAR latch, one could just connect pin 2 of the Arduino to pin 9 of the MAR, pin 4 (Arduino) to pin 13 (74175), and pin 5 to pin 12.
+
+[Arduino code](https://rawgithub.com/Netopya/s228/master/ino/ArduinoInterruptDebugger/ArduinoInterruptDebugger.ino)
+
 ## Project Labs
 
 At this phase, we will start building the lab project for the rest of the course. You may clear off everything on your project board up until now as it will not be needed. Pay close attention to wiring as from now on we will be keeping everything on the project until the end of the project and poor wiring will make locating mistakes in the lab much more difficult.
