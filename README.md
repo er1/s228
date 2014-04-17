@@ -217,7 +217,7 @@ Lab reports are due two weeks after they are assigned. __Lab report 1 is due the
 
 There will be a 10% __deduction__ on the lab grade if you fail to include your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
-## Debugging 101
+## Troubleshooting 101
 
 ### Some pointers when building your circuit
 
@@ -227,7 +227,7 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 3. Always try to wire your circuit as neatly as possible. 
 
-### Debugging
+### Troubleshooting
 
 1. Make sure that you are using the correct chip and that its pins aren't bended. `TIP: some of the chips are being used for a second time, so the pins might already be bent or will bend when you push them in`
 
@@ -262,7 +262,7 @@ The primary function of a CPU is to perform a set of operations called instructi
 
 We will introduce two new logic chips for this purpose.
 
-- The 555 chip which is a chip used to control timing. We will wire it up in asyncronous mode so that it generates the alternating signal from one to zero. This setup uses an RC tank circuit to control the timing of the signal meaning the values of the resistors and capacitor control how fast the value changes.
+- The 555 chip which is a chip used to control timing. We will wire it up in asynchronous mode so that it generates the alternating signal from one to zero. This setup uses an RC tank circuit to control the timing of the signal meaning the values of the resistors and capacitor control how fast the value changes.
 
 - The 74164 chip which is a serial-in-parallel-out (SIPO) shift register. A SIPO shift register is a chip with several flip-flops chained up internally so that all the outputs of each flip-flop are accessible on their own pin and where the inputs are provided by the preceding flip-flop's output. The first input is made accessible on a pin which we use to shift values in.
 
@@ -275,6 +275,10 @@ We will be using the clock signal to generate a clock for the shift register so 
 In this lab, you will be building the CPU buses for your computer. A CPU bus is a common system such that registers can move values between each other. In this lab we will build two buses, one where all the registers outputs are attached to one of the ALU inputs, and one where the register inputs are attached to the ALU output. Since the ALU has two inputs, the remaining input will be attached to a controllable 0 or 1.
 
 A Register is a Flop-Flop with a Tri-State buffer attached to make the output controllable. This gives a device which can be attached to a bus for both inputs and outputs. The register will read off the bus attached at its input just as a flip flop would when its enable line is triggered, this works because one output can feed several inputs. The Tri-State buffer allows the output to be controlled by electrically disconnecting it so that we can allow only one value to be output on the bus at a time. Without it, the bus would be attached to more than one output leading to conflicting signals on the bus.
+
+[Wikipedia Page on Buses](http://en.wikipedia.org/wiki/Bus_(computing))
+
+[Wikipedia Page on Registers](http://en.wikipedia.org/wiki/Processor_register)
 
 ...
 
