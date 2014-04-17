@@ -36,11 +36,11 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
 
-In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electric connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
+In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electric connection with holes in the same row or column. Note that only the holes called "power rails" connect along their column, designated by a red or blue line, taking up the sides of the prototyping area. WIthin the prototyping area, components are NOT connected in columns, but by rows. Be sure you know which connects in which way. There are two areas on the breadboard: the prototyping area and the supply rails.
 
-The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins.
+The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins. This means that ALL chips, LEDs, and switches need to "straddle" the gap along the middle to properly function.
 
-The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively.
+The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively. Note that their value will never change, once connected, VCC wil lalways be "high" and GND will always be "low".
 
 ![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
 
@@ -48,20 +48,20 @@ The supply rails are arranged in two rows connected in a long line with a red or
 
 We will be using 22 gauge solid core copper wire for this project.
 
-The wires should be properly cut and the plastic insulation must be stripped from the inner conductor before use. The amount of insulation stripped should nominally expose 6mm (1/4 inches) of wire.
+The wires should be properly cut and the plastic insulation must be stripped from the inner conductor before use. The amount of insulation stripped should nominally expose 6mm (1/4 inches) of wire. To ensure proper wire organization, measure the length needed, then add 12 mm to that length for the nonisulated ends, before cutting and stripping it. Make sure to keep to a proper wiring theme, to make debugging easier.
 
 ## Integrated Circuit Chips
 
-We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated circuit chips for this project.
+We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated circuit chips for this project. Again, remember that ALL chips, LEDs, and switches need to "straddle" the gap along the middle to properly function.
 
 ## Passive Components
 ### Resistor
 
-We will be using 330 &Ohm; resistors as a means to limit current through LEDs and to serve as pull-ups on switches. The clock circuit will make use of two 22 K&Ohm; resistors as part of a resistor-capacitor (RC) tank circuit.
+We will be using 330 &Ohm; resistors as a means to limit current through LEDs and to serve as pull-ups on switches. The clock circuit will make use of two 22 K&Ohm; resistors as part of a resistor-capacitor (RC) tank circuit. These connect along a column, and are required for proper LED functionality.
 
 ### Capacitor
 
-We will be using a capacitor in the clock circuit as part of the RC tank circuit.
+We will be using a capacitor in the clock circuit as part of the RC tank circuit. These connect similarly to wires, linking two rows together. They do not need to be placed at the center, as they are not DIP chips.
 
 ## Light Emitting Diodes
 
@@ -69,7 +69,7 @@ We will be using a strip of Light Emiting Diodes (LEDs) as a means of visualizin
 
 ## Switches
 
-We will be using a strip of switches to toggle between data values.
+We will be using a strip of switches to toggle between data values. Make sure to determine which side is 'on' and which side is 'off' before wiring.
 
 # Data Representation
 
