@@ -36,11 +36,11 @@ In this lab, we will use `VCC`, `5V` and `+5V`
 
 ## Breadboard
 
-In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electric connection with holes in the same row or column. There are two areas on the breadboard: the prototyping area and the supply rails.
+In this project, we will be using a prototyping project board more commonly known as a breadboard. It contains small holes which share an electric connection with holes in the same row or column. Note that only the holes called "power rails" connect along their column, designated by a red or blue line, taking up the sides of the prototyping area. WIthin the prototyping area, components are NOT connected in columns, but by rows. Be sure you know which connects in which way. There are two areas on the breadboard: the prototyping area and the supply rails.
 
-The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins.
+The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins. This means that ALL chips, LEDs, and switches need to "straddle" the gap along the middle to properly function.
 
-The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively.
+The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively. Note that their value will never change, once connected, VCC wil lalways be "high" and GND will always be "low".
 
 ![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
 
@@ -48,20 +48,20 @@ The supply rails are arranged in two rows connected in a long line with a red or
 
 We will be using 22 gauge solid core copper wire for this project.
 
-The wires should be properly cut and the plastic insulation must be stripped from the inner conductor before use. The amount of insulation stripped should nominally expose 6mm (1/4 inches) of wire.
+The wires should be properly cut and the plastic insulation must be stripped from the inner conductor before use. The amount of insulation stripped should nominally expose 6mm (1/4 inches) of wire. To ensure proper wire organization, measure the length needed, then add 12 mm to that length for the nonisulated ends, before cutting and stripping it. Make sure to keep to a proper wiring theme, to make debugging easier.
 
 ## Integrated Circuit Chips
 
-We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated circuit chips for this project.
+We will be using standard 300mil plastic Dual Inline Package (DIP) Integrated circuit chips for this project. Again, remember that ALL chips, LEDs, and switches need to "straddle" the gap along the middle to properly function.
 
 ## Passive Components
 ### Resistor
 
-We will be using 330 &Ohm; resistors as a means to limit current through LEDs and to serve as pull-ups on switches. The clock circuit will make use of two 22 K&Ohm; resistors as part of a resistor-capacitor (RC) tank circuit.
+We will be using 330 &Ohm; resistors as a means to limit current through LEDs and to serve as pull-ups on switches. The clock circuit will make use of two 22 K&Ohm; resistors as part of a resistor-capacitor (RC) tank circuit. These connect along a column, and are required for proper LED functionality.
 
 ### Capacitor
 
-We will be using a capacitor in the clock circuit as part of the RC tank circuit.
+We will be using a capacitor in the clock circuit as part of the RC tank circuit. These connect similarly to wires, linking two rows together. They do not need to be placed at the center, as they are not DIP chips.
 
 ## Light Emitting Diodes
 
@@ -69,7 +69,7 @@ We will be using a strip of Light Emiting Diodes (LEDs) as a means of visualizin
 
 ## Switches
 
-We will be using a strip of switches to toggle between data values.
+We will be using a strip of switches to toggle between data values. Make sure to determine which side is 'on' and which side is 'off' before wiring.
 
 # Data Representation
 
@@ -217,6 +217,34 @@ Lab reports are due two weeks after they are assigned. __Lab report 1 is due the
 
 There will be a 10% __deduction__ on the lab grade if you fail to include your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
 
+## Debugging 101
+
+### Some pointers when building your circuit
+
+1.  Always use a color convention!!! ( VCC = RED, Ground = BLACK)  `TIP : it will help you to use the same color when you want to propagate your clock signal throughout your breadboard`
+
+2. Please use shorter wires when you want to connect something. Your breadboard will look much cleaner and will cause you less problems if you even need to do some debugging later on.
+
+3. Always try to wire your circuit as neatly as possible. 
+
+### Debugging
+
+1. Make sure that you are using the correct chip and that its pins aren't bended.
+
+2. Check if your ground and power pins of all your logic chips are connected correctly.
+
+3. During the construction of your circuit, you may have incorrectly  connected a cable. To find this error, you will need to create a "debugging cable". 
+  * Connect 1 long red cable to a LED. 
+   `Since red is used for vcc in your color convention, no one will be mislead in error that it is a required cable in your circuit.`  
+  *  When you will connect this cable to a random pin on your breadboard, it will show you its data.
+  +  **E.G.** 
+      You want to make sure that you have spread your clock signal correctly on your breadboard. 
+      + Connect your 'debug cable' to a pin that is supposed to be receiving a clock signal. If your debug LED is not showing you the clock signal, then you have found your problem, however, if it is showing the correct pattern, then you can proceed to the next pin to be tested. 
+      + This process can be used to verify if a chip is receiving the correct input or producing the good output. 
+      + `Faulty chip can be found using this method`
+
+4. You may also add more LED on you breadboard to show intermediate result. It could help you isolate problem later on. 
+
 ## Project Labs
 
 At this phase, we will start building the lab project for the rest of the course. You may clear off everything on your project board up until now as it will not be needed. Pay close attention to wiring as from now on we will be keeping everything on the project until the end of the project and poor wiring will make locating mistakes in the lab much more difficult.
@@ -306,7 +334,11 @@ In this lab, we will be building the control unit for your computer. The control
 `led latch` = `? in` &or; `clock`  
 `mar latch` = `phase1` &or; `clock`
 
-Note: You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
+Notes: (1) You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
+
+(2) After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
+
+(3) To test if your mar latch and your led latch are latching or working correctly, you can attach a wire from the 9 pin of each latch to a working led light. Observe the resulting display patterns. Your mar latch light should act the same as your phase 1 light from your clock. Your led latch light should act the same as your phase 3 light from your clock. This means that your mar latch is latching at phase 1 and your led latch light is latching at phase 3. 
 
 To verify if your equations are correct, you can debug the output of every equation by connecting each of them to a spare LED one by one, and changing the data in the instruction registers accordingly to verify its behaviour. For example, make your address lines fixed, and make every bit in the instruction register low except for `ir2`. If you verify the equation that is proposed for `a in`, this output must be always active when `ir2` is active. If you set `ir2` back to low again, `a out` should now become `phase3`. Similar logic can be applied to the output of `add1`, which becomes &not;`phase1` when `ir1` is active, and &not;(`phase1`&and;`phase3`) when `ir1` is low. If one of your outputs is not working correctly, backtrace them to the chips that are creating the equation. This is particularly important since WRONG CHIPS OFTEN END UP IN THE WRONG BOXES, AND CHIPS OFTEN HAVE A FEW PINS BURNT OUT. This is a way to correct these issues.
 
