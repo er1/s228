@@ -308,6 +308,13 @@ In this lab, we will be building the control unit for your computer. The control
 
 Note: You will need to remove any existing signals that were being fed to the chips that the control unit is not providing. This is to ensure that each input only gets one value.
 
+
+(SO MY IDEA IS ADDING DEBBUGGING TIPS. HOWEVER DUMB THIS MIGHT SEEM, AFTER I FINISHED MY LAB, PEOPLE ASKED ME WHAT WAS WRONG WITH THEIRS, BUT DIDN'T HAVE A GOOD IDEA FOR A STRATEGY FOR DEBUGGING, SO I HELPED KINDA LIKE THIS:)
+
+To verify if your equations are correct, you can debug the output of every equation by connecting each of them to a spare LED one by one, and changing the data in the instruction registers accordingly to verify its behaviour. For example, make your address lines fixed, and make every bit in the instruction register low except for `ir2`. If you verify the equation that is proposed for `a in`, this output must be always active when `ir2` is active. If you set `ir2` back to low again, `a out` should now become `phase3`. Similar logic can be applied to the output of `add1`, which becomes &not;`phase1` when `ir1` is active, and &not;(`phase1`&and;`phase3`) when `ir1` is low. If one of your outputs is not working correctly, backtrace them to the chips that are creating the equation. This is particularly important since WRONG CHIPS OFTEN END UP IN THE WRONG BOXES, AND CHIPS OFTEN HAVE A FEW PINS BURNT OUT. This is a way to correct these issues.
+
+(OK, END OF USELESS RANT)
+
 After implementing the control unit, the four LEDs that were previously counting might not be, this is normal. Attach `?_in` to `pc_in` and they should continue counting.
 
 #### Signal description
@@ -625,6 +632,26 @@ On shift, the value in `In1` &and; `In2` will be stored in `Q1`, `Q2` will conta
  GND   [|     |]   Cout
         '-----'
 ```
+
+(PEOPLE WERE ALSO CONFUSED ABOUT THIS SO I ADDED IT, EVEN THOUGH ITS EASY TO GOOGLE I GUESS)
+
+# PIN Enumeration
+
+Pin are numberd in an anticlockwise fashion like so:
+
+```AsciiDoc
+        .-._.-.
+   1   [|     |]   16
+   2   [| 74  |]   15
+   3   [| 173 |]   14
+   4   [|     |]   13
+   5   [|     |]   12
+   6   [|     |]   11
+   7   [|     |]   10
+   8   [|     |]   9
+        '-----'
+```
+
 
 # Test Area
 
