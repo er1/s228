@@ -40,7 +40,7 @@ In this project, we will be using a prototyping project board more commonly know
 
 The prototyping area located in the middle is where you will place the components in this project. The prototyping area has a grid of holes, identified by a letter and number written on the top and side. These holes are electrically connected in a line of five (i.e. pins 1A through 1E are all connected but not to 1F or 2A). There is a gap in the middle which will be where you put the center of your DIP (Dual Inline Package) components so that you can make connections to their pins. This means that ALL chips, LEDs, and switches need to "straddle" the gap along the middle to properly function.
 
-The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively. Note that their value will never change, once connected, VCC wil lalways be "high" and GND will always be "low".
+The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively. Note that their value will never change, once connected, VCC wil always be "high" and GND will always be "low".
 
 ![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
 
@@ -227,6 +227,9 @@ There will be a 10% __deduction__ on the lab grade if you fail to include your n
 
 3. Always try to wire your circuit as neatly as possible. 
 
+4. Have a designated wire cutter.
+
+
 ### Troubleshooting
 
 1. Make sure that you are using the correct chip and that its pins aren't bended. `TIP: some of the chips are being used for a second time, so the pins might already be bent or will bend when you push them in`
@@ -313,6 +316,13 @@ In this lab, we will also be including our Instruction Register (IR) which will 
 ...
 
 ![Example circuit for Lab 6](https://raw2.github.com/er1/s228/master/lab6_bb.png)
+
+####How to program the Memory
+
+1. Select the memory adress
+2. Set enabler to high
+3. Set the desirable IR/Data switches to high
+4. Set enabler to low and back to high to save the data
 
 #### To include in Lab Report 3
 
