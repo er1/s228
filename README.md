@@ -42,7 +42,7 @@ The prototyping area located in the middle is where you will place the component
 
 The supply rails are arranged in two rows connected in a long line with a red or blue stripe next to them. They are electrically connected as indicated by the line next to them (i.e. a break in the line means a break in the connection). These are used for your power supply connection and you should attach them to `VCC` or `GND` for red and blue respectively. Note that their value will never change, once connected, VCC wil lalways be "high" and GND will always be "low".
 
-![A breadboard graphic](https://rawgithub.com/er1/s228/master/breadboard.svg)
+![A breadboard graphic](breadboard.svg)
 
 ## Wires
 
@@ -123,7 +123,7 @@ __IF YOU SMELL SMOKE OR BURNING, CUT THE POWER ON YOUR POWER SUPPLY IMMEDIATELY 
 4. Use the switch to control the LED.
 5. Hook up a logic gate and use switches for its input and an LED for its output.
 
-![Example circuit for Lab 1](https://rawgithub.com/er1/s228/master/lab1_bb.svg)
+![Example circuit for Lab 1](lab1_bb.svg)
 
 ### Circuits using Logic ICs (Half Adder)
 
@@ -194,7 +194,7 @@ X in this case is used to denote the "Don't Care" input where the value can be e
 
 In this part of the lab, you will construct a D type latch and test its ability to store a value.
 
-![Example circuit for Lab 3](https://rawgithub.com/er1/s228/master/lab3_bb.svg)
+![Example circuit for Lab 3](../lab3_bb.svg)
 
 ## Flip-Flops
 
@@ -268,7 +268,7 @@ We will introduce two new logic chips for this purpose.
 
 We will be using the clock signal to generate a clock for the shift register so that it can shift values on its own. The value that we shift in will be based on the values that are already in the register and will be such that there is only one zero in the register (i.e. shifting in 1 unless the register contains all 1s).
 
-![Example circuit for Lab 4](https://raw2.github.com/er1/s228/master/lab4_bb.png)
+![Example circuit for Lab 4](../lab4_bb.png)
 
 ### Buses and Registers
 
@@ -282,7 +282,7 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 
 ...
 
-![Example circuit for Lab 5](https://raw2.github.com/er1/s228/master/lab5_bb.png)
+![Example circuit for Lab 5](../lab5_bb.png)
 
 #### To include in Lab Report 2
 
@@ -312,7 +312,7 @@ In this lab, we will also be including our Instruction Register (IR) which will 
 
 ...
 
-![Example circuit for Lab 6](https://raw2.github.com/er1/s228/master/lab6_bb.png)
+![Example circuit for Lab 6](lab6_bb.png)
 
 #### To include in Lab Report 3
 
