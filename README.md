@@ -213,9 +213,9 @@ A flip-flop is two chained D-type latches such that the D input for the second c
 - A truth table for a __full-adder__ circuit
 - A gate diagram for and an explanation of a D latch
 
-Lab reports are due two weeks after they are assigned. __Lab report 1 is due the week of February 10.__
+Lab reports are due two weeks after they are assigned.
 
-There will be a 10% __deduction__ on the lab grade if you fail to include your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+There will be a 10% __deduction__ on the lab grade if you do not include both your name and group number on your report.
 
 ## Troubleshooting 101
 
@@ -299,9 +299,9 @@ A Register is a Flop-Flop with a Tri-State buffer attached to make the output co
 - Describe the functions of an ALU and compare it to what we have built in the lab
 - Describe how one would perform the register transfer language operation A -> B
 
-Lab reports are due two weeks after they are assigned. __Lab report 2 is due the week of March 10.__
+Lab reports are due two weeks after they are assigned.
 
-There will be a 10% __deduction__ on the lab grade if you fail to include your name or __group number__ on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
+There will be a 10% __deduction__ on the lab grade if you do not include both your name and group number on your report.
 
 ### Memory
 
@@ -448,8 +448,6 @@ INC B
 
 #### To include in Lab Report 4
 
-__SUBJECT TO CHANGE__
-
 - The architecture of the computer
 - A description of what the control unit does
 - The functionality of the control unit implemented in the lab
@@ -458,15 +456,7 @@ __SUBJECT TO CHANGE__
 
 Lab report deadline will be discussed during the lab session.
 
-There will be a 10% __deduction__ on the lab grade if you fail to include both your name or group number on your report. There will be a 40% __deduction__ in lab grade if you fail to complete the labs before the lab report deadline.
-
-<!--
-#### To include in Lab Report 5
-__SUBJECT TO CHANGE__
-- A short post mortem on what you have learned in the lab, what you had difficulties with and what you might fix
-OR
-- Lab topics (talk to your lab instructor for more information)
--->
+There will be a 10% __deduction__ on the lab grade if you do not include both your name and group number on your report.
 
 # Description of Chips Used
 
@@ -695,16 +685,3 @@ Pin are numberd in an anticlockwise fashion like so:
    8   [|     |]   9
         '-----'
 ```
-
-
-# Test Area
-
-```AsciiDoc
-        .-._.-.
-       [|     |]
-       [|     |]
-       [|     |]
-       [|     |]
-        '-----'
-```
-
