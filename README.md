@@ -468,14 +468,7 @@ Chips are numbered counter-clockwise starting at the notch on the chip (on the t
 
 The 555 Timer Chip is a chip used to generate various output waveforms. For our purpose, we will be using it to generate our clock signal in the Clock Signal Generator lab. In depth knowledge of this chip is not needed for this course.  However, more information can be found on the [555 Timer IC Wikipedia page](http://en.wikipedia.org/wiki/555_timer_IC).
 
-```AsciiDoc
-        .-._.-.
- GND   [|     |]   VCC
-TRIG   [| 555 |]   DIS
- OUT   [|     |]   THR
-~RES   [|     |]   CTRL
-        '-----'
-```
+![alt tag] (http://www.m0ukd.com/Calculators/555_timer_calculator/555_pinout.png)
 
 - `VCC`: +5V Supply Voltage
 - `GND`: Ground
@@ -486,72 +479,19 @@ TRIG   [| 555 |]   DIS
 
 The 7404 is a chip that contains 6 NOT gates, also known as inverters.
 
-`Yn` = ~`An`
-
-```AsciiDoc
-        .-._.-.
-  A4   [|     |]   VCC
-  Y4   [| 74  |]   A1
-  A5   [|  04 |]   Y1
-  Y5   [|     |]   A2
-  A6   [|     |]   Y2
-  Y6   [|     |]   A3
- GND   [|     |]   Y3
-        '-----'
-```
-
-- `VCC`: +5V Supply Voltage
-- `GND`: Ground
-- `A#`: Input for correspondingly numbered gate
-- `Y#`: Output for correspondingly numbered gate
+![alt tag](http://science.ehc.edu/~physics/physics361/7404.jpg)
 
 ## 7408 AND Gate (x4) 
 
 The 7408 is a chip that contains 4 AND gates.
 
-`Yn` = `An` &and; `Bn`
-
-```AsciiDoc
-        .-._.-.
-  A3   [|     |]   VCC
-  B3   [| 74  |]   A1
-  Y3   [|  08 |]   B1
-  A4   [|     |]   Y1
-  B4   [|     |]   A2
-  Y4   [|     |]   B2
- GND   [|     |]   Y2
-        '-----'
-```
-
-- `VCC`: +5V Supply Voltage
-- `GND`: Ground
-- `A#`: First Input for correspondingly numbered gate
-- `B#`: Second Input for correspondingly numbered gate
-- `Y#`: Output for correspondingly numbered gate
+![alt tag](http://science.ehc.edu/~physics/physics361/7408.jpg)
 
 ## 7432 OR Gate (x4)
 
 The 7432 is a chip that contains 4 OR gates.
 
-`Yn` = `An` &or; `Bn`
-
-```AsciiDoc
-        .-._.-.
-  A3   [|     |]   VCC
-  B3   [| 74  |]   A1
-  Y3   [|  32 |]   B1
-  A4   [|     |]   Y1
-  B4   [|     |]   A2
-  Y4   [|     |]   B2
- GND   [|     |]   Y2
-        '-----'
-```
-
-- `VCC`: +5V Supply Voltage
-- `GND`: Ground
-- `A#`: First Input for correspondingly numbered gate
-- `B#`: Second Input for correspondingly numbered gate
-- `Y#`: Output for correspondingly numbered gate
+![alt tag](http://science.ehc.edu/~physics/physics361/7432.jpg)
 
 ## 7442 Decoder
 
